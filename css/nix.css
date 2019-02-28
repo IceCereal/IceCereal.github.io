@@ -125,7 +125,7 @@ i {
 	display: block;
 	width: 100%;
 	padding: 10px;
-	height: 100px;
+	box-shadow: 0 50vh 0 50vh rgba(0,0,0,0.25);
 }
 
 .push {
