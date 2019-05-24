@@ -6,10 +6,20 @@
     <description>Recent content on IceCereal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Jan 1970 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 Mar 2019 17:12:36 +0530</lastBuildDate>
     
 	<atom:link href="http://icecereal.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Projects</title>
+      <link>http://icecereal.github.io/projects/</link>
+      <pubDate>Thu, 21 Mar 2019 17:12:36 +0530</pubDate>
+      
+      <guid>http://icecereal.github.io/projects/</guid>
+      <description>These are the projects I have worked on / I am working on. These are displayed in random order. hi--
+Bots MemeTaker_Bot  One of the first bots I developed. This bot was developed to fetch a meme from 4 defined subreddits and download the meme using wget. This program was called by my more, ambitious SuperUserBot_V2. It also makes sure that the meme has not been downloaded before.</description>
+    </item>
     
     <item>
       <title>About_Me</title>
