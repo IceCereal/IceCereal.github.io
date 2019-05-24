@@ -17,8 +17,9 @@
       <pubDate>Thu, 21 Mar 2019 17:12:36 +0530</pubDate>
       
       <guid>http://icecereal.github.io/projects/</guid>
-      <description>These are the projects I have worked on / I am working on. These are displayed in random order. hi--
-Bots MemeTaker_Bot  One of the first bots I developed. This bot was developed to fetch a meme from 4 defined subreddits and download the meme using wget. This program was called by my more, ambitious SuperUserBot_V2. It also makes sure that the meme has not been downloaded before.</description>
+      <description>These are the projects I have worked on / I am working on. These are displayed in random order.
+MemeTaker_Bot  One of the first bots I developed. This bot was developed to fetch a meme from 4 defined subreddits and download the meme using wget. This program was called by my more, ambitious SuperUserBot_V2. It also makes sure that the meme has not been downloaded before.
+SuperUserBot_V2  This is the second version of my first Discord Bot.</description>
     </item>
     
     <item>
