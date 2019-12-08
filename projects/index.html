@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.51" />
+<meta name="generator" content="Hugo 0.57.2" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -69,7 +69,7 @@
 				
 				<li class="dropdown">
                     
-            		<a href="https://drive.google.com/file/d/1SBS_aoRcdG2d9qoEIQ8GCq0CNss1pw1m/view?usp=sharing" style="color:black;background-color:#d4d4d4;height:2em;">~/resume</a>
+            		<a href="https://drive.google.com/file/d/1e7nqKWsJBjkBPCIDLTAewzqHb5ZARvs-/view?usp=sharing" style="color:black;background-color:#d4d4d4;height:2em;">~/resume</a>
             		
         		</li>
         		
@@ -168,15 +168,50 @@ This is the second version of my first <code>Discord Bot</code>. It was a very d
 
 <p><a href="https://github.com/IceCereal/The-Game-Of-Life"><i style="margin-left:0em;margin-right:0em;color:blue;" class="fa fa-link fa-1x;"></i></a> Conway&rsquo;s Game of Life written in Python and Java for now. Plans on doing it in C++ and OpenGL exist. I also plan on adding intelligence to blobs and see how they work. But, I have to see.</p>
 
+<h3 id="hackweek-3-game">Hackweek-3-Game</h3>
+
+<p><a href="https://github.com/IceCereal/HackWeek-3-Game"><i style="margin-left:0em;margin-right:0em;color:blue;" class="fa fa-link fa-1x;"></i></a> I know, a <i>very</i> original name. This was a game I made with some 1<sup>st</sup> years for a Hackweek conducted by Enigma. I wrote all of it from scratch in PyGame. You feed it an image (any image) and it converts it to a map. You can play your game on this pixelated map and your objective is to find keys. The last updated version on my laptop seems to have been deleted and the repository is ~8 commits behind. I don&rsquo;t know if I will ever update it so that the repo&rsquo;s current code isn&rsquo;t buggy because &hellip; life. But, yeh -_-</p>
+
+<h3 id="psygan">PsyGAN</h3>
+
+<p>Early 2019, our college got a <a href="https://economictimes.indiatimes.com/tech/hardware/mahindra-ecole-centrale-launches-supercomputer-lab/articleshow/71203120.cms">supercomputer</a>. Desperate to try it out, I deployed a Generative Adversial Network to generate Psychedelic Images. I couldn&rsquo;t find a decent enough dataset, so I had to make a <a href="https://gist.github.com/IceCereal/60976aae6288b13173f17818ac702ce2">program</a> (bot) to download data from a particular data from a Subreddit. I was able to get 881 pictures from <a href="https://www.reddit.com/r/psychedelicartwork/top/?t=all">r/PsychedelicArt</a> (not enough -_-) and after loading a basic GAN Template from PyTorch, I was able to train a GAN that made this in 22 hours after 150 Epochs:
+<div style="display: flex; justify-content: center">
+<img src="/img/fake_samples_epoch_149.png" width="35%" height="35%">
+</div></p>
+
+<p style="text-align: center"> This is the final image (150<sup>th</sup> Epoch) </p>
+
+<div style="display: flex; justify-content: center">
+<img src="/img/Timelapse-extended-small-size.gif">
+</div>
+
+<p style="text-align: center"> This is a GIF of the progress </p>
+
+<p>This may not look like much, but it&rsquo;s unimaginable that a computer was able to <b>learn</b> the patterns involved and make this from scratch with information from only 881 images. Happiness! ┐(￣ヮ￣)┌</p>
+
+<h3 id="dell-emc-hackathon-ai-enabled-cart-conversion">Dell EMC Hackathon: AI-Enabled Cart Conversion</h3>
+
+<p><a href="https://gitlab.com/IceCereal/ai-enabled-cart-conversion"><i style="margin-left:0em;margin-right:0em;color:blue;" class="fa fa-link fa-1x;"></i></a> This is a submission for a 24-Hour Hackathon conducted by Dell EMC at my college on 2019-Oct-21. The problem statement was: AI-Enabled Cart Conversion. When a customer adds a product to a cart on an E-Commerce website, there is a probability that they would remove (abandon) it. Thus, a way needed to be figured out to minimize this abandoment by converting it to a success by using some sort of AI. We made a compeletely working website that picked up live data, sent it to a backend that figured out the abandonment rate and had a recommender system that recommended the right product in the event of a high abandonment. The video made by us is here: <a href="https://drive.google.com/file/d/14VsCsoVkk3e6KxGpAN-UA0IBrI909aaB/view?usp=sharing">Team Singularity AI-Enabled-Cart-Conversion</a></p>
+
 <h3 id="a-couple-of-websites">A Couple of Websites</h3>
 
 <p>I&rsquo;ve worked on:</p>
 
 <p>airomec.com (the link&rsquo;s dead), the sports fest of my college.</p>
 
-<p><a href="https://aethermec.github.io">aethermec.com</a>, the official techno-cultural fest of my college.</p>
+<p><a href="https://aethermec.github.io">aethermec.com</a>, the official techno-cultural fest of my college. (This website has been updated, the original code is <a href="https://github.com/aethermec/aethermec.github.io" target="_blank">here</a>)</p>
 
 <p><a href="https://mec-enigma.github.io">mec-engima.github.io</a></p>
+
+<p><a href="https://point-blanc.github.io/">https://point-blanc.github.io/</a> &lt;- My proudest website ;-;</p>
+
+<p><a href="urs">https://www.mahindraecolecentrale.edu.in/urs/</a></p>
+
+<p>There are a few more, but I&rsquo;m too lazy to find/remember them and link them all.</p>
+
+<h3 id="icsh-icecereal-shell">ICSH - IceCereal Shell</h3>
+
+<p><a href="https://github.com/IceCereal/OS-Lab-Sem-5/tree/master/6-16-Sept"><i style="margin-left:0em;margin-right:0em;color:blue;" class="fa fa-link fa-1x;"></i></a> A Shell completely written by me as a part of my Operating Systems Lab Course. The same repository linked also has a simulation for Page Tables and a Translation Lookaside Buffer. I wrote over 5,000 lines of C this semester. <sup>10</sup>&frasl;<sub>10</sub> would do again. 👌👌👌.</p>
 
 <h2 id="internships">Internships</h2>
 
@@ -257,7 +292,7 @@ This is the second version of my first <code>Discord Bot</code>. It was a very d
 <h3 id="games-i-made-in-12-sup-th-sup-grade">Games I made in 12<sup>th</sup> grade</h3>
 
 <p>I made a couple of games using <code>graphics.h</code> (TurboC++ specific) in my 12<sup>th</sup> grade. These included:<br>
-$ Brick Breaker (This had sound!!!)<br>
+$ Brick Breaker (This had music!!! (8-bit music I &lsquo;composed&rsquo; on the piano. (I played eight chords and converted those to freqeuncies to be sent as an output to the piezo electric buzzer inside the computer.))<br>
 $ Galaga<br>
 $ The Dino Game from Chrome (Except that it was done with a unicyclist and bullets)<br>
 $ A Who Wants To Be A Millionaire Framework<br>
@@ -288,6 +323,8 @@ $ A Bouncy Ball subject to Physics (Gravity and Energy)</p>
 <a href="https://github.com/IceCereal" title="GitHub" target="_blank"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a>
 
 
+<a href="https://gitlab.com/IceCereal" title="GitLab" target="_blank"><i class="fab fa-gitlab fa-2x" aria-hidden="true"></i></a>
+
 
 
 <a href="https://linkedin.com/in/nsraghav" title="LinkedIn" target="_blank"><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i></a>
@@ -316,7 +353,7 @@ $ A Bouncy Ball subject to Physics (Gravity and Energy)</p>
 <a href="https://www.last.fm/user/IceCereal" title="last.fm" target="_blank"><i class="fab fa-lastfm fa-2x" aria-hidden="true"></i></a>
 
 
-<a href="https://drive.google.com/file/d/1SBS_aoRcdG2d9qoEIQ8GCq0CNss1pw1m/view?usp=sharing" title="Curriculum Vitae" target="_blank"><i class="far fa-file fa-2x" aria-hidden="true"></i></a>
+<a href="https://drive.google.com/file/d/1e7nqKWsJBjkBPCIDLTAewzqHb5ZARvs-/view?usp=sharing" title="Curriculum Vitae" target="_blank"><i class="far fa-file fa-2x" aria-hidden="true"></i></a>
 
 
 
