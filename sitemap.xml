@@ -3,8 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://icecereal.github.io/blog/</loc>
+    <lastmod>2019-12-10T15:29:39+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>http://icecereal.github.io/</loc>
-    <lastmod>2019-03-21T17:12:36+05:30</lastmod>
+    <lastmod>2019-12-10T15:29:39+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://icecereal.github.io/blog/init-d/</loc>
+    <lastmod>2019-12-10T15:29:39+05:30</lastmod>
   </url>
   
   <url>

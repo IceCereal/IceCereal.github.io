@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on IceCereal</title>
+    <link>http://icecereal.github.io/blog/</link>
+    <description>Recent content in Blogs on IceCereal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Dec 2019 15:29:39 +0530</lastBuildDate>
+    
+	<atom:link href="http://icecereal.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Init D</title>
+      <link>http://icecereal.github.io/blog/init-d/</link>
+      <pubDate>Tue, 10 Dec 2019 15:29:39 +0530</pubDate>
+      
+      <guid>http://icecereal.github.io/blog/init-d/</guid>
+      <description>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Okay, so I&amp;rsquo;ve been putting this off for a very long time, but it&amp;rsquo;s time I do it. I have the time, I&amp;rsquo;m bored, I&amp;rsquo;m alone in the library with no one to distract me, I have a hot cup of coffee, and I have good music playing on my headphones. I want this blog to be a place where I can jot down my ideas, make a To-Do list, and track my progress in discrete intervals of time.</description>
+    </item>
+    
+  </channel>
+</rss>
