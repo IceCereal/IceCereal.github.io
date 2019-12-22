@@ -6,10 +6,19 @@
     <description>Recent content on IceCereal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Dec 2019 01:12:13 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 22 Dec 2019 12:11:58 +0530</lastBuildDate>
     
 	<atom:link href="http://icecereal.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pass, My New Password Manager</title>
+      <link>http://icecereal.github.io/blog/pass-my-new-password-manager/</link>
+      <pubDate>Sun, 22 Dec 2019 12:11:58 +0530</pubDate>
+      
+      <guid>http://icecereal.github.io/blog/pass-my-new-password-manager/</guid>
+      <description>It seems as if I do everything but the tasks on my To-Do list. I&amp;rsquo;ve been using Firefox&amp;rsquo;s Lockwise (In-Built Password Manager) for a decent amount of time now and I decided that it was finally time to move on from an external password manager to my own password managing system. I started looking for Unix Password Managers and there were a few. After some consideration, I settled for Pass, a beautiful password manager that works on GPG and simplicity.</description>
+    </item>
     
     <item>
       <title>I Set Up a PiHole</title>
