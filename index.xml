@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IceCereal</title>
@@ -6,10 +6,19 @@
     <description>Recent content on IceCereal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Dec 2019 12:11:58 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 25 Dec 2019 12:48:01 +0530</lastBuildDate>
     
 	<atom:link href="http://icecereal.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tips Fedora 31</title>
+      <link>http://icecereal.github.io/blog/tips-fedora-31/</link>
+      <pubDate>Wed, 25 Dec 2019 12:48:01 +0530</pubDate>
+      
+      <guid>http://icecereal.github.io/blog/tips-fedora-31/</guid>
+      <description>Okay, I got bored. Really bored. So what do all cool kids do when they&amp;rsquo;re bored? Change their OS, obviously 🙄. Yes, I changed my OS. Again. Which makes it the 4th time I&amp;rsquo;ve formatted my computer this year (excluding my Desktop format). I was running Ubuntu 19.10 (Eoan Ermine) for around 2 months when I felt it to be a bit heavy and a bit buggy. I also had only one partition of 2Tb size which I couldn&amp;rsquo;t really shrink into multiple partitions becuase I encrypted it with LUKS2.</description>
+    </item>
     
     <item>
       <title>Pass, My New Password Manager</title>

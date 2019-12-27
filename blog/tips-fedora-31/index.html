@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title> I Set Up a PiHole &middot; IceCereal </title>
+        <title> Tips Fedora 31 &middot; IceCereal </title>
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -97,12 +97,41 @@
 </header>
 
         <div class="container wrapper">
-            <h1>I Set Up a PiHole</h1>
-            <span class="post-date">Dec 18, 2019 </span>
+            <h1>Tips Fedora 31</h1>
+            <span class="post-date">Dec 25, 2019 </span>
             <div class="post-content">
-                <p>Okay, so this wasn&rsquo;t on my To-Do List but I really wanted to do this for a looong time&hellip; so I did it 5 minutes ago. A couple of days ago, I bought a Raspberry Pi 4 (1Gb RAM) and decided to set up a <a href="https://pi-hole.net" target="_blank">PiHole</a>. <code>Pi-hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole, intended for use on a private network.</code> is what Wikipedia says and that&rsquo;s better than whatever I could have said. In very simple terms it&rsquo;s a program on an Raspberry Pi that filters the internet data for ads and trackers going through your router. It&rsquo;s easier understood on their website rather than me tryna explain it here.</p>
+                <p>Okay, I got bored. Really bored. So what do all cool kids do when they&rsquo;re bored? Change their OS, obviously 🙄. Yes, I changed my OS. Again. Which makes it the 4<sup>th</sup> time I&rsquo;ve formatted my computer this year (excluding my Desktop format). I was running Ubuntu 19.10 (Eoan Ermine) for around 2 months when I felt it to be a bit heavy and a bit buggy. I also had only one partition of 2Tb size which I couldn&rsquo;t really shrink into multiple partitions becuase I encrypted it with LUKS2. Everyone on the interwebs said the easiest and safest solution was to format the computer and reinstall the OS again.</p>
 
-<p>But, yeh. I&rsquo;m glad that open source software exists and this entire gig cost me less than INR 3,200 [3,100 for the Pi, 100 for the LAN Cable]. I&rsquo;ll support PiHole by donating some money to it one day and that&rsquo;s a promise.</p>
+<p>I backed up my computer (1.5 hours) with <a href="http://duplicity.nongnu.org/" target="_blank">duplicity</a>, a great backup program which encrypts data and efficiently stores it using <a href="https://en.wikipedia.org/wiki/Rsync" target="_blank">rsync</a>. Who knows how much time and space it would have taken if I&rsquo;d used anything else. Once everything was backed up, I was still in the mindset of installing Ubuntu 19.10 or Ubuntu 18.04.3; I still wasn&rsquo;t sure. I asked a few online forums on their opinions and one person suggested <a href="https://elementary.io/" target="_blank">elementary OS</a>. I looked into it and it seemed pretty cool and it being an Ubuntu-based OS made it a compelling choice. However, like most decisions I make in life, I decided to go against all logic and install Fedora 31.</p>
+
+<p>During the installation, I was really confused why the installation program was telling me my file systems should be <code>xfs</code> and not <code>ext4</code>. <code>xfs</code> is mainly used in servers and is usually meant when storing very <strong>large</strong> files, like in the order of Tb&rsquo;s. It was only mid-installation when I realized my mistake. I was installing Fedora Server and not Fedora Workstation, the one meant for laptops/desktops. As a wise man once said, <a href="https://youtu.be/5d5NJgO38AE?t=362" target="_blank">my disappointment is immeasurable, and my day is ruined</a>. I had to quit the installation, flash the <strong>right</strong> iso and then start&hellip; all over again 🤦‍♂️. <em>3 hours later</em>, I was done. I finally had Fedora 31 (the right one) running.</p>
+
+<p>However, it kept freezing for a few seconds every 5-10 minutes. That&rsquo;s when I realized that Fedora was running on Wayland and not X11. So I switched over to X11 and everything worked seamlessly. The next few hours were just setting up my shell, theme, wallpaper, partitions and restoring my data (I very seriously love duplicity).</p>
+
+<p>Once everything was set up, I decided to make my life even more miserable by insatlling <a href="https://i3wm.org/" target="_blank">i3</a>, a tiling window manager. I&rsquo;ve used i3 very briefly before and it went over my head that time. This time, I wanted my work to be as efficient as possible and that meant reducing my mouse interaction as much as possible (you <em>do</em> use your mouse in i3 occasionally, but it&rsquo;s not that much).</p>
+
+<p>Below is a screenshot of how i3 looks on my 2 monitor setup (casual flex). <br><br></p>
+
+<div style="display: flex; justify-content: center">
+<img src="/img/blog-images/tips-fedora-31/i3wmScreenshot.png">
+</div>
+
+<p style="text-align: center">i3 tiling window manager</p> <br><br>
+
+<div style="display: flex; justify-content: center">
+<img src="/img/blog-images/tips-fedora-31/wallpaper.png" style="margin-right:0.5em">
+<img src="/img/blog-images/tips-fedora-31/lockscreen.png">
+</div>
+
+<p style="text-align: center">I also have a sweet desktop wallpaper(L) and lockscreen wallpaper\(R): <a href="https://drive.google.com/drive/folders/1f12o8ea-JvXeeAFRKsAwTb_UVp2meDYG">link</a> to both</p>
+
+<hr>
+
+<p>In other news, I finally put off watching the last season of The Big Bang Theory <strong>(no spoilers here)</strong> and watched it over the past few days. I&rsquo;ve been watching it since 2013 (Season 7) and I guess I didn&rsquo;t watch the final season because I didn&rsquo;t want the show to end. As expected, the last episode made me feel sad. It made me feel sad because we&rsquo;d never see Amy, Bernadette, Howard, Leonard, Penny, Raj and Sheldon on the screen again. These were the characters that I grew up with for 7 years and they had become a normal part of my living (I know it sounds very cheesy). Just thinking about never seeing them again made me feel a strange melancholy and an unnerving unease. To the characters, I bid you all aideu.</p>
+
+<hr>
+
+<p>Okay, time to go work on TagThisBot. If I don&rsquo;t finish the rest of it today, I never will. <img src="/img/emoji/serious.png" alt="An image of a pumped up Gintoki from Gintama should appear here. If it doesn't I have to find a new pumped up image." width="50px;" style="vertical-align: baseline;"></p>
 
             </div>
             <hr>
