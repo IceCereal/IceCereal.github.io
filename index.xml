@@ -6,10 +6,19 @@
     <description>Recent content on IceCereal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jan 2020 22:28:05 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jan 2020 00:30:08 +0530</lastBuildDate>
     
 	<atom:link href="http://icecereal.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Working With Android Studio</title>
+      <link>http://icecereal.github.io/blog/working-with-android-studio/</link>
+      <pubDate>Tue, 14 Jan 2020 00:30:08 +0530</pubDate>
+      
+      <guid>http://icecereal.github.io/blog/working-with-android-studio/</guid>
+      <description>5 of my friends and I have a pretty cool idea for an app. We&amp;rsquo;ve been discussing it non-stop for the past 4-5 days and trying to decide what our app should be. It all started from a simple and primitive idea and it evolved to a pretty decent stage now. I&amp;rsquo;m not going to discuss the app idea here because it&amp;rsquo;s in its primitive stage (and what if my 1 reader (including me) steals the idea?</description>
+    </item>
     
     <item>
       <title>My Favorite Indie Band Uploaded A Story About Me</title>
