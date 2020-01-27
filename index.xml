@@ -6,10 +6,30 @@
     <description>Recent content on IceCereal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Jan 2020 00:30:08 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jan 2020 15:11:46 +0530</lastBuildDate>
     
 	<atom:link href="http://icecereal.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Second Place in a Hackathon</title>
+      <link>http://icecereal.github.io/blog/second-place-in-a-hackathon/</link>
+      <pubDate>Mon, 27 Jan 2020 15:11:46 +0530</pubDate>
+      
+      <guid>http://icecereal.github.io/blog/second-place-in-a-hackathon/</guid>
+      <description>TL;DR at the bottom
+On 23rd January, The Entrepreneurship &amp;amp; Innovation Cell (EIC) of our college conducted their annual ESummit. They had a few events out of which one was The Startup Sprint: a 30 hour long hackathon meant for students who wanted to start a company. It focused ~60% on the Business Part and ~40% on the Technology Part. The hackathon began on Thursday afternoon at 2pm and was to end on Friday evening at 8pm.</description>
+    </item>
+    
+    <item>
+      <title>Two Weeks in the New Sem</title>
+      <link>http://icecereal.github.io/blog/two-weeks-in-the-new-sem/</link>
+      <pubDate>Fri, 17 Jan 2020 14:22:59 +0530</pubDate>
+      
+      <guid>http://icecereal.github.io/blog/two-weeks-in-the-new-sem/</guid>
+      <description>Previously, on the blog: Winter Vacation is Done
+Am I looking forward to next semester? I&#39;m not sure. These are the courses I have: - Computer Networks (9 / 10 excited 🎉🎉) - Web Programming (7 / 10 excited) - Software Engineering (6 / 10 excited) - Machine Learning (6 / 10 excited) - High Performance Computing (10 / 10 excited 🎉🎉🎉) - Third Year Team Project - This is variable - Elective-1 - I still have to choose this.</description>
+    </item>
     
     <item>
       <title>Working With Android Studio</title>
