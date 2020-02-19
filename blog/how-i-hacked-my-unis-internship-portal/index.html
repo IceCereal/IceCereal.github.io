@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> How I Hacked My Uni&#39;s Internship Portal &middot; IceCereal </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.59.1" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="css/nix.css">
+<link rel="stylesheet" href="../css/nix.css">
+<link rel="stylesheet" href="../../css/nix.css">
+<link rel="stylesheet" href="../../../css/nix.css">
+
+<link rel="stylesheet" href="http://icecereal.github.io/css/nix.css">
+
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top font-header" style="height:2.27em;">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://icecereal.github.io/ style="font-size: 1.5em;background-color:rgba(0,0,0,0.75);">raghav@IceCereal ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right" style="margin-top:0.2em;">
+				<li>
+					<a href="http://icecereal.github.io/" style="color:black;background-color:#d4d4d4;height:2em;">/home/raghav</a>
+				</li>
+				
+				
+				<li class="dropdown">
+                    
+            		<a href="/about_me/" style="color:black;background-color:#d4d4d4;height:2em;">~/about_me</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+            		<a href="https://drive.google.com/open?id=1o22eWgLH20Yu1nycZGT2V6shyrqzgCWF" style="color:black;background-color:#d4d4d4;height:2em;">~/resume</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+            		<a href="/projects/" style="color:black;background-color:#d4d4d4;height:2em;">~/projects</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+            		<a href="/blog/" style="color:black;background-color:#d4d4d4;height:2em;">~/blog</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+            		<a href="/special/" style="color:black;background-color:#d4d4d4;height:2em;">~/special posts</a>
+            		
+        		</li>
+        		
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1>How I Hacked My Uni&#39;s Internship Portal</h1>
+            <span class="post-date">Feb 17, 2020 </span>
+            <div class="post-content">
+                <p><em><b>Warning</b>: This is low-key illegal. I&rsquo;m very fortunate that the parties involved took it in a good manner and didn&rsquo;t suspend me. Note to future self: Don&rsquo;t do stupid shit.</em></p>
+
+<p><em>Note to the reader: I use College and University interchangably because my College is almost about to be a Uni soon, so yeah.</em></p>
+
+<p><em>TL;DR at the bottom</em></p>
+
+<p>Well, this is going to be a looong and <em>glorious</em> post. This is the story of how a young man became the most powerful person on his campus for around 8 hours. So sit back, relax and enjoy the long read (or don&rsquo;t, it&rsquo;s really up to you).</p>
+
+<p>It all started on 7<sup>th</sup> February at 10:20pm when I should have been studying for my exams on Tuesday. I got a mail from one of my professors saying that one of the internships on the internship portal was open only for another day and that we should apply for it soon if we were interested. I didn&rsquo;t really check out the internship before and thought to check it now. Here&rsquo;s something you should know about our internship portal: It&rsquo;s a locally hosted (i.e. you can access it only on campus WiFi) website made by a few students in their senior year as one of their college projects. I logged in with my credentials (My roll number and their default password which I couldn&rsquo;t even change) and I clicked on the internship.</p>
+
+<p>As I started to go through the internship, I realized one very blatant thing. You know the lock symbol at the left hand side of your address bar that is usually green? Well, it was red. For those of you who don&rsquo;t know what it signifies, it means that the connection isn&rsquo;t secure and that someone could figure out what I&rsquo;m doing on the website if they wanted to. I could understand why it was red, though. The website wasn&rsquo;t open to the internet. It was only available on our campus using only our campus WiFi. The probability that someone would listen to others signing up for internships was incredibly low and the effort spent would incredibly useless for the &ldquo;hacker&rdquo;. This lock doesn&rsquo;t have much to do with what I did, but it&rsquo;s the starting point of this blog post.</p>
+
+<p>The moment I noticed that the website wasn&rsquo;t secure, I thought of other areas where the website might also not be secure. My first thought went to <a href="https://download.oracle.com/oll/tutorials/SQLInjection/html/lesson1/les01_tm_ovw3.htm" target="_blank">unsanitized inputs</a> of which SQL Injections are super famous. It&rsquo;s essentially running something like <code>SELECT * FROM students;--</code> in a place where I can send text across (like a form) and the server executes it because it thinks that this is a valid SQL statement. This would give me information about the contents about a table called students. If I knew the admin table name, I could get a list of admin users. However, much to my dismay, the developers of this website had sanitized their inputs and SQL Injections didn&rsquo;t work.</p>
+
+<p>It was then I noticed at the bottom of each page in the footer: <code>Developed with ❤️ by *******</code> (name censored for obvious reasons). Clicking on the name led me to a Github organization page which had only one repository, the organization&rsquo;s github.io page. Going through that page gave me nothing as they had no info on it. I went back to the Github organization page and looked at the members of the organization who turned out to be two senior students, one whom I knew well. I clicked on their profile and went through their recent repositories and what I saw next blew my mind 🤯. After 10-ish repositories, I saw the Internship Portal&rsquo;s full code in a repository. This now meant I knew how the backend of the internship portal worked; this knowledge was power. If I could figure out a flaw in the code, I could possibly try to exploit it.</p>
+
+<p>A very blantantly obvious piece of information I was able to notice was that the <code>db.sqlite3</code> was uploaded to Github and that the backend of the website was built using Django. The <code>db.sqlite3</code> is a file that should have never been uploaded to Github because that contains all the tables and values, something that no one should see. I downloaded the file and opened it with a sqlite3 viewer and in front of me was data of all users, admins and passwords (encrypted, of course).<br><br></p>
+
+<div style="display: flex; justify-content: center; border-style:solid;border-width:1px;">
+<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/tables.png">
+</div>
+<!-- <span hidden="true">``</span> -->
+
+<p style="text-align: center">Fig 1. All the tables that existed in their database</p>
+<p style="text-align: center;">Fig 2. The auth_user table</p>
+<div style="display: flex; justify-content: center; border-style:solid;border-width:1px; margin-bottom:16px;">
+<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/database.png">
+</div>
+
+<p>Remember at the beginning when I mentioned that users couldn&rsquo;t change their passwords? I checked the code and saw that there was no code to let people change their password, that meant all the professors&rsquo; passwords were also default. I took the first professor&rsquo;s name on the list and got their username and tried logging in with the default password.</p>
+
+<p>It didn&rsquo;t work 🙁. I then went back to the repository and painstakingly went through the functions in <code>views.py</code> which took me around 45-ish minutes leading me to conclude nothing by 12pm. I then decided to go through the other files and I found something major after 5 minutes in a file called <code>urls.py</code>:</p>
+
+<pre><code class="language-python3"># user = User.objects.create_user('*RollNumber*',password='A DEFAULT PASSWORD THAT I'M NOT TYPING HERE')
+# user.first_name=&quot;***&quot;
+# user.last_name=&quot;*******&quot;
+# user.email=&quot;*************@*******.***&quot;
+# user.groups.add(students)
+# user.profile.leisureTime=&quot;Peaks&quot;
+# user.profile.location=&quot;Student&quot;
+# user.save()
+</code></pre>
+
+<p>This was commented code for entering a default user and their credentials. My default password and this default password were off by one character. Hmm&hellip;. this was interesting. Git Blame showed that this code was edited a year ago and my account was made a few months ago. That meant all the old accounts still had this password unless they could change it somehow, which they couldn&rsquo;t because going through the commit history of the files showed no results for any code related to changing a password. I now tried to log in with the professor&rsquo;s username and the old default password.</p>
+
+<p>I was in. I let out a small sigh of satisfaction (more like I yelled like crazy). I instantly logged out because Django web servers remember IP Addresses and I didn&rsquo;t want any trace back to my IP Address (It&rsquo;s not that hard to change your IP Address, but still). I now thought about going to the library and using the computers there. It&rsquo;s open until 1am and I had 45-ish minutes to do whatever I wanted to do if I wanted to do whatever I wanted to do (that&rsquo;s a beautiful sentence). I speed walk to the library and don&rsquo;t sign in claiming to take only 5 minutes. I couldn&rsquo;t leave any trace.</p>
+
+<p>I go to the E-Library and there was only one student there. I login to a guest account on the computer and open the internship portal and login to the professor&rsquo;s account. There, I had an option of creating an internship which I clicked on. It was here I had an epiphany. Two words: <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Rick Roll</a>. Yes. I wanted to Rick Roll anyone who checked out the internship. If you don&rsquo;t know what a Rick Roll is, according to <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Wikipedia</a> <code>it's a prank and an Internet meme involving an unexpected appearance of the music video for the 1987 Rick Astley song &quot;Never Gonna Give You Up&quot;. The meme is a type of bait and switch using a disguised hyperlink that leads to the music video. The victims, believing that they are accessing some unrelated material, are said to have been rickrolled.</code> This was going to piss so many people off. :evil laugh:</p>
+
+<p>I created a basic internship that was for Computer Science students titled <code>Summer Internship at URA</code> (University of Rick Astley). The description: <code>URA is a prestigious university that focuses on cutting-edge research in the fields of AI, ML, NLP and VR. For more details, please watch this link: https://www.youtube.com/watch?v=dQw4w9WgXcQ</code>. This was a high-effort Rick Roll because the Rickrollee had to copy the link and paste it to get Rick Rolled. 👌.</p>
+
+<p>It was the moment of truth. I clicked on the create internship button and watched &hellip; nothing happen. I clicked on the create internship button again and watched nothing happen, again. This was truly baffling until it dawned on me. Only the admin could create internships. The professors merely have accounts that don&rsquo;t have the functionality of creating internships and instead use the portal to view internships/applications. It was only the admin who could create internships at the request of professors. This was going to be difficult.</p>
+
+<p>It was touching 12:45 and the librarian had given me a 15-minutes-left warning. I decided to log out and go back to my room to work from there. I go back and the first thing I do is change my MAC address and my IP Address on my laptop. I had thought about getting into the admin account whilst walking back. As per Fig 2., I had the admin username (the red box) (and no, it wasn&rsquo;t <code>admin</code>. It was a proper username that I couldn&rsquo;t have guessed). I now needed the password. What I did have was the encrypted password which was something like pbkdf2_sha256$*****$*********$*****************. A quick search online showed that Django stores it passwords like <code>&lt;algorithm&gt;$&lt;iterations&gt;$&lt;salt&gt;$&lt;hash&gt;</code>. All I needed was a way to decrypt this cryptic password. The question was how.</p>
+
+<p>Enter <a href="https://hashcat.net/hashcat/" target="_blank"><code>hashcat</code></a>, a password recovery tool. Hashcat is a beautiful and very processor intensive program that can use a variety of techniques to break an encrypted password. If I were to run it on my laptop, it would take months for it to decrypt a password. It would possibly take a few days on my Desktop (which has a GTX 1070). But &hellip; better yet, it could possibly take a few hours on &hellip; the college&rsquo;s <a href="https://economictimes.indiatimes.com/tech/hardware/mahindra-ecole-centrale-launches-supercomputer-lab/articleshow/71203120.cms" target="_blank">supercomputer</a>. The supercomputer has 8 of the most powerful commericially available GPUs on the planet and those could probably finish the task much faster than my Desktop.</p>
+
+<p>I log in to the supercomputer and run a docker image that has hashcat with the right CUDA drivers for the GPU. I ran the command <code>hashcat --opencl-devices 2 --attack-mode 3 --hash-type 10000 --outfile crackedPassword encryptedPasswordFile</code>. This ran hashcat on the 8 GPUs.<br><br></p>
+
+<div style="display: flex; justify-content: center;">
+<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/hashcat.jpg">
+</div>
+
+<p style="text-align: center">Fig 3. The hashcat program going through passwords</p> <br>
+
+<div style="display: flex; justify-content: center;">
+<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/nvidia-smi.jpg">
+</div>
+
+<p style="text-align: center">Fig 4. nvidia-smi showing that hashcat was monstrously eating up the power of 8 GPUs</p>
+
+<p>Unfortunately, I don&rsquo;t have the screenshot of the final screen where hashcat says that the status is cracked, but I provide a slightly less cool alternative at the end of the post.</p>
+
+<p>Hashcat took about an hour to run and after an intense hour of not knowing what was going to happen, I saw the status. It said <code>cracked</code>. I could feel electricity through my fingers as I proceeded to type out the command that displays the content of the file which had the decrpyted password. However,I felt all the electricity drain when I saw what the password was. It was the default password <sup><strong>MASSIVE FACEPALM</strong><sup>TM</sup></sup>. I felt a lot of things in that moment and confusion was probably what I felt the most. But my feelings didn&rsquo;t matter. The password did.</p>
+
+<p>I typed the admin usernamme. I typed the admin password. I 👏 Was 👏 In 👏. THE SWEET FEELING OF BECOMING A HACKER HIT ME. <br><br></p>
+
+<div style="display: flex; justify-content: center;">
+<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/hackerman.png" width="300vw;" style="max-width: 400px;">
+</div>
+
+<p style="text-align: center">Fig 5. HackerIceCereal</p>
+
+<p>Now, for the moment of truth. I created a <code>Summer Internship at URA</code> with the description as <code>URA is a prestigious institution that primarily works on cutting edge reseaarch in the field of AI, ML, NLP and VR. The details of the internship are provided in the following video: https://www.youtube.com/watch?v=dQw4w9WgXcQ</code>. <br><br></p>
+
+<div style="display: flex; justify-content: center;">
+<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/djangoAdmin.jpg">
+</div>
+
+<p style="text-align: center">Fig 6. The admin interface</p> <br>
+
+I opened my phone and checked the internships on the internship portal. <br><br>
+
+<div class="row">
+    <div class="col-md-6">
+        <div style="display: flex; justify-content: center;">
+            <img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/internshipsAll.jpg" height="600px;">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div style="display: flex; justify-content: center;">
+            <img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/internshipOnPhone.jpg" height="600px;">
+        </div>
+    </div>
+</div>
+
+<p style="text-align: center">Fig 7 Left. 8 Right. (Left) The front page of the internships portal. Notice the red square. (Right) The actual internship page.</p>
+
+<p>The time was 3am and I was internally yelling. After calming down I decided to sleep, happy that I had something worthy of a blog post to write about.</p>
+
+<p>I woke up at 10:30am the next day to a few messages on a Whatsapp group and an email. The email was regarding an <em>internship</em>&mdash; I freaked out. I opened the email and thankfully it was about the deadline of another internship. However, I should have anticipated what was to happen next. Many, <em>many</em> students opened the portal that very instant and found another internship at the bottom: <code>Summer Internship at URA</code>. And what ensued was many such messages as the one below:</p>
+
+<div style="display: flex; justify-content: center;">
+<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/bigeGood.jpg" height="900px;">
+</div>
+
+<p style="text-align: center">Fig 9. One of many Whatsapp groups finding out about the Summer Internship at URA. I acted innocent, of course.</p>
+
+<p>By 12:30pm, a lot of people on my campus knew about the Rickroll. The news eventually spread to the admin (the senior year student) and by 1pm it was down 😔. It was good while it lasted.</p>
+
+<p>I went and told the professor-in-charge about what I did later that week and they didn&rsquo;t seem mad; in fact, it look liked they were trying to hide a smile (but that could be my imagination). The important thing to note here is that <del>I didn&rsquo;t get suspended</del> I told the prof-in-charge and they made sure to make repository private and to change the passwords. Alas, all bad things must come to good end if you&rsquo;re a White Hat (I don&rsquo;t know if this qualifies me, but let&rsquo;s just assume I am one for now).</p>
+
+<p>And this, my friend, is the humble beginnings of Hackerman. Thank you for coming to my TED Talk<sup>&reg;</sup>.</p>
+
+<p><strong>TL;DR</strong> I got into my Uni&rsquo;s internship portal, created an internship, rick-rolled everyone. High-Effort Memes<br><br></p>
+
+<p>PostScript: About the <code>I don't have the screenshot of the final screen where hashcat says that the status is cracked, but I provide a slightly less cool alternative at the end of the post.</code>, this is a screenshot of my Desktop running Hashcat with a mask so that you can actually believe me. -_-</p>
+
+<div style="display: flex; justify-content: center;">
+<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/hashcatWorking.png">
+</div>
+
+<p style="text-align: center">Fig 10. Hashacat showing the cracked status on the hash provided (run on my Desktop)</p>
+
+            </div>
+            <hr>
+            <span style="float: right;">-IceCereal</span>
+            <br><br>
+            <footer class="footer text-center">
+	<div class="row">
+		<div class="col-xs-12 user-social text-center">
+		
+
+
+
+
+<a href="https://twitter.com/NS_Raghav" title="Twitter" target="_blank"><i class="fab fa-twitter fa-2x" aria-hidden="true"></i></a>
+
+
+
+
+
+<a href="https://github.com/IceCereal" title="GitHub" target="_blank"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://gitlab.com/IceCereal" title="GitLab" target="_blank"><i class="fab fa-gitlab fa-2x" aria-hidden="true"></i></a>
+
+
+
+<a href="https://linkedin.com/in/nsraghav" title="LinkedIn" target="_blank"><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://open.spotify.com/user/t4pfbok0xhcuwo4wza98boxlq?si=U0b2eXiLR56zX5NLsOyZRg" title="Spotify" target="_blank"><i class="fab fa-spotify fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://instagram.com/icecereal30" title="Instagram" target="_blank"><i class="fab fa-instagram fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://t.me/IceCereal" title="Telegram" target="_blank"><i class="fab fa-telegram fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://discordapp.com/users/378555841017544724" title="Discord" target="_blank"><i class="fab fa-discord fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://reddit.com/user/IceCereal" title="Reddit" target="_blank"><i class="fab fa-reddit fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="mailto:raghav170555@mechyd.ac.in" title="Email" target="_blank"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>
+
+
+
+
+
+
+<a href="https://www.last.fm/user/IceCereal" title="last.fm" target="_blank"><i class="fab fa-lastfm fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://drive.google.com/open?id=1o22eWgLH20Yu1nycZGT2V6shyrqzgCWF" title="Curriculum Vitae" target="_blank"><i class="far fa-file fa-2x" aria-hidden="true"></i></a>
+
+
+
+		</div>
+	</div>
+<p style="text-align: center;">IceCereal.github.io - Made by IceCereal |
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>:
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme
+</span>
+</p>
+</footer>
+
+        
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+
+        
+    </body>
