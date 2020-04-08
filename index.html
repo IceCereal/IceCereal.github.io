@@ -4,7 +4,7 @@
 		<title> IceCereal </title>
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 <meta name="generator" content="Hugo 0.66.0" />
 
 
@@ -177,14 +177,14 @@
 			</div>
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4 user-description text-center">
-					<p style="text-align:center" id="cute-shiz">
+					<p style="text-align:center">
 						CompSci Fanatic<br/>
 						Music Lover<br/>
 						Anime Enthusiast<br/>
 						Bookworm<br/>
 						Fedora 31 👒
 					</p>
-					<p style="font-size: 0.775em;text-align:center" id="cute-shiz-2">
+					<p style="font-size: 0.775em;text-align:center">
 						Last Updated: 2020-Feb-17
 					</p>
 				</div>
@@ -255,34 +255,5 @@
 </p>
 </footer>
 
-
-		<script>
-			var allowedKeys = {
-				68 : 'd', 76 : 'l', 87 : 'w', 77 : 'm', 69 : 'e', 79 : 'o'
-			};
-			var konamiCode = ['d', 'l', 'l', 'w', 'm', 'e', 'o', 'w'];
-
-			var konamiCodePosition = 0;
-
-			document.addEventListener('keydown', function(e) {
-				var key = allowedKeys[e.keyCode];
-				var requiredKey = konamiCode[konamiCodePosition];
-
-				if (key == requiredKey) {
-					konamiCodePosition++;
-					if (konamiCodePosition == konamiCode.length) {
-						activateCheats();
-						konamiCodePosition = 0;
-					}
-				} else {
-					konamiCodePosition = 0;
-				}
-			});
-
-			function activateCheats() {
-				document.getElementById("cute-shiz").innerHTML = "Hangs out with Sri-Chan";
-				document.getElementById("cute-shiz-2").innerHTML = "Always";
-			}
-		</script>
 	</body>
 </html>
