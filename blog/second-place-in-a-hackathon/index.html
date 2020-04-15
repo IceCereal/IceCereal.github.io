@@ -109,6 +109,44 @@
 </nav>
 </header>
 
+<style>
+@media (max-width: 1250px) {
+	.navbar-header {
+		float: none;
+	}
+	.navbar-left,.navbar-right {
+		float: none !important;
+	}
+	.navbar-toggle {
+		display: block;
+	}
+	.navbar-collapse {
+		border-top: 1px solid transparent;
+		box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+	}
+	.navbar-fixed-top {
+			top: 0;
+			border-width: 0 0 1px;
+		}
+	.navbar-collapse.collapse {
+		display: none!important;
+	}
+	.navbar-nav {
+		float: none!important;
+			margin-top: 7.5px;
+		}
+		.navbar-nav>li {
+		float: none;
+	}
+	.navbar-nav>li>a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.collapse.in{
+		display:block !important;
+	}
+}
+</style>
         <div class="container wrapper">
             <h1>Second Place in a Hackathon</h1>
             <span class="post-date">Jan 27, 2020 </span>
@@ -117,9 +155,7 @@
 <p>On 23<sup>rd</sup> January, The Entrepreneurship &amp; Innovation Cell (EIC) of our college conducted their annual ESummit. They had a few events out of which one was The Startup Sprint: a 30 hour long hackathon meant for students who wanted to start a company. It focused ~60% on the Business Part and ~40% on the Technology Part. The hackathon began on Thursday afternoon at 2pm and was to end on Friday evening at 8pm. I initially had no intention of participating because I wanted to chill and I was done with hackathons for a while. My friend (Friend A), the president of the EIC and organizer of the ESummit, asked me to take care of the media coverage (photos and videos) for the hackathon and other events of the ESummit. He had a montage sort of vision and wanted me to take photos and videos with this in mind.</p>
 <p>I go to the hackathon and start taking a few videos, shortly after which I sit down because I had enough. I don&rsquo;t know what happened but at around ~4 PM, my interest was piqued and my interest to participate in the hackathon increased slightly. It was around 8 PM that I decided to actually participate in the hackathon with an idea in mind: an Automatic Video Editor. Why? I didn&rsquo;t feel like editing the raw footage that the media team would take for the montage. It was too much effort. Instead, I decided to make a program that would edit the video for me. A <em>very</em> far-fetched thing, yes, but hey 🤷, it was an interesting idea at least for a blog post in the event that it didn&rsquo;t work out.</p>
 <p>I started planning at around 8:30 PM and came up with this basic flowchart (it&rsquo;s nothing fancy):<br></p>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/second-place-in-a-hackathon/Flowchart.png" alt="Flowchart should appear here. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." height="300px">
-</div>
+<img src="/img/blog-images/second-place-in-a-hackathon/Flowchart.png" alt="Flowchart should appear here. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." height="300px" class="image-center">
 <p style="text-align: center">Flowchart boi</p>
 <p>The plan was to create an Automatic Video Editor that would be personalized for me. Between events and different editing files, my program was to understand how I generally edit my videos and &ldquo;learn&rdquo; my style so that the next time I upload my raw footage and audio, it would do a primitive edit and let me figure out the rest. The main users were to be people who wanted to make videos, hobby editors, people who wanted to learn how to edit videos and YouTube Vloggers (or Vloggers in general). When a Vlogger becomes big, they usually decide to shell out more content and have less time for editing and hence hire full time editors. My program would simplify their editing so that they wouldn&rsquo;t have to spend too much time on editing. Seemed pretty solid.</p>
 <p>I started working on the audio part first to figure out how to do <a href="https://en.wikipedia.org/wiki/Beatmatching" target="_blank">beat sync</a>. I scoured the internet for python libraries and eventually found <a href="https://aubio.org/" target="_blank">aubio</a> which could analyze audio files for these four properties: <a href="https://aubio.org/manual/latest/py_analysis.html" target="_blank">Onset, Pitch, Tempo and Notes</a>. I worked until 4 AM on utilizing these four classes to get what I wanted before I broke to get some food. I returned at 4:30 AM and worked till 6 AM which is when I finished working on the audio part. I decided to go back and sleep for an hour. I woke up 4 hours later 🤦‍♂️ realizing I had 30 minutes to get to class (it was still a working Friday). I attended Computer Networks and went to the hackathon after class. At this time, I asked my friend (Friend M) if he was interested to help out with my idea. He seemed enthusiastic and was interested to help out. Yay! An extra hand.</p>

@@ -109,6 +109,44 @@
 </nav>
 </header>
 
+<style>
+@media (max-width: 1250px) {
+	.navbar-header {
+		float: none;
+	}
+	.navbar-left,.navbar-right {
+		float: none !important;
+	}
+	.navbar-toggle {
+		display: block;
+	}
+	.navbar-collapse {
+		border-top: 1px solid transparent;
+		box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+	}
+	.navbar-fixed-top {
+			top: 0;
+			border-width: 0 0 1px;
+		}
+	.navbar-collapse.collapse {
+		display: none!important;
+	}
+	.navbar-nav {
+		float: none!important;
+			margin-top: 7.5px;
+		}
+		.navbar-nav>li {
+		float: none;
+	}
+	.navbar-nav>li>a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.collapse.in{
+		display:block !important;
+	}
+}
+</style>
         <div class="container wrapper">
             <h1>How I Hacked My Uni&#39;s Internship Portal</h1>
             <span class="post-date">Feb 17, 2020 </span>
@@ -122,14 +160,14 @@
 <p>The moment I noticed that the website wasn&rsquo;t secure, I thought of other areas where the website might also not be secure. My first thought went to <a href="https://download.oracle.com/oll/tutorials/SQLInjection/html/lesson1/les01_tm_ovw3.htm" target="_blank">unsanitized inputs</a> of which SQL Injections are super famous. It&rsquo;s essentially running something like <code>SELECT * FROM students;--</code> in a place where I can send text across (like a form) and the server executes it because it thinks that this is a valid SQL statement. This would give me information about the contents about a table called students. If I knew the admin table name, I could get a list of admin users. However, much to my dismay, the developers of this website had sanitized their inputs and SQL Injections didn&rsquo;t work.</p>
 <p>It was then I noticed at the bottom of each page in the footer: <code>Developed with ❤️ by *******</code> (name censored for obvious reasons). Clicking on the name led me to a Github organization page which had only one repository, the organization&rsquo;s github.io page. Going through that page gave me nothing as they had no info on it. I went back to the Github organization page and looked at the members of the organization who turned out to be two senior students, one whom I knew well. I clicked on their profile and went through their recent repositories and what I saw next blew my mind 🤯. After 10-ish repositories, I saw the Internship Portal&rsquo;s full code in a repository. This now meant I knew how the backend of the internship portal worked; this knowledge was power. If I could figure out a flaw in the code, I could possibly try to exploit it.</p>
 <p>A very blantantly obvious piece of information I was able to notice was that the <code>db.sqlite3</code> was uploaded to Github and that the backend of the website was built using Django. The <code>db.sqlite3</code> is a file that should have never been uploaded to Github because that contains all the tables and values, something that no one should see. I downloaded the file and opened it with a sqlite3 viewer and in front of me was data of all users, admins and passwords (encrypted, of course).<br><br></p>
-<div style="display: flex; justify-content: center; border-style:solid;border-width:1px;">
-<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/tables.png">
+<div style="border-style:solid;border-width:1px;">
+<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/tables.png" class="image-center">
 </div>
 <!-- <span hidden="true">``</span> -->
 <p style="text-align: center">Fig 1. All the tables that existed in their database</p>
 <p style="text-align: center;">Fig 2. The auth_user table</p>
-<div style="display: flex; justify-content: center; border-style:solid;border-width:1px; margin-bottom:16px;">
-<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/database.png">
+<div style="border-style:solid;border-width:1px; margin-bottom:16px;">
+<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/database.png" class="image-center">
 </div>
 <p>Remember at the beginning when I mentioned that users couldn&rsquo;t change their passwords? I checked the code and saw that there was no code to let people change their password, that meant all the professors&rsquo; passwords were also default. I took the first professor&rsquo;s name on the list and got their username and tried logging in with the default password.</p>
 <p>It didn&rsquo;t work 🙁. I then went back to the repository and painstakingly went through the functions in <code>views.py</code> which took me around 45-ish minutes leading me to conclude nothing by 12pm. I then decided to go through the other files and I found something major after 5 minutes in a file called <code>urls.py</code>:</p>
@@ -153,20 +191,16 @@
 <img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/hashcat.jpg">
 </div>
 <p style="text-align: center">Fig 3. The hashcat program going through passwords</p> <br>
-<div style="display: flex; justify-content: center;">
-<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/nvidia-smi.jpg">
-</div>
+<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/nvidia-smi.jpg" class="image-center">
 <p style="text-align: center">Fig 4. nvidia-smi showing that hashcat was monstrously eating up the power of 8 GPUs</p>
 <p>Unfortunately, I don&rsquo;t have the screenshot of the final screen where hashcat says that the status is cracked, but I provide a slightly less cool alternative at the end of the post.</p>
 <p>Hashcat took about an hour to run and after an intense hour of not knowing what was going to happen, I saw the status. It said <code>cracked</code>. I could feel electricity through my fingers as I proceeded to type out the command that displays the content of the file which had the decrpyted password. However,I felt all the electricity drain when I saw what the password was. It was the default password <sup><strong>MASSIVE FACEPALM</strong><sup>TM</sup></sup>. I felt a lot of things in that moment and confusion was probably what I felt the most. But my feelings didn&rsquo;t matter. The password did.</p>
 <p>I typed the admin usernamme. I typed the admin password. I 👏 Was 👏 In 👏. THE SWEET FEELING OF BECOMING A HACKER HIT ME. <br><br></p>
-<div style="display: flex; justify-content: center;">
-<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/hackerman.png" width="300vw;" style="max-width: 400px;">
-</div>
+<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/hackerman.png" width="300vw;" style="max-width: 400px;" class="image-center">
 <p style="text-align: center">Fig 5. HackerIceCereal</p>
 <p>Now, for the moment of truth. I created a <code>Summer Internship at URA</code> with the description as <code>URA is a prestigious institution that primarily works on cutting edge reseaarch in the field of AI, ML, NLP and VR. The details of the internship are provided in the following video: https://www.youtube.com/watch?v=dQw4w9WgXcQ</code>. <br><br></p>
 <div style="display: flex; justify-content: center;">
-<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/djangoAdmin.jpg">
+<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/djangoAdmin.jpg" class="image-center">
 </div>
 <p style="text-align: center">Fig 6. The admin interface</p> <br>
 <p>I opened my phone and checked the internships on the internship portal. <br><br></p>
@@ -185,18 +219,14 @@
 <p style="text-align: center">Fig 7 Left. 8 Right. (Left) The front page of the internships portal. Notice the red square. (Right) The actual internship page.</p>
 <p>The time was 3am and I was internally yelling. After calming down I decided to sleep, happy that I had something worthy of a blog post to write about.</p>
 <p>I woke up at 10:30am the next day to a few messages on a Whatsapp group and an email. The email was regarding an <em>internship</em>&mdash; I freaked out. I opened the email and thankfully it was about the deadline of another internship. However, I should have anticipated what was to happen next. Many, <em>many</em> students opened the portal that very instant and found another internship at the bottom: <code>Summer Internship at URA</code>. And what ensued was many such messages as the one below:</p>
-<div style="display: flex; justify-content: center;">
-<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/bigeGood.jpg" height="900px;">
-</div>
+<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/bigeGood.jpg" height="900px;" class="image-center">
 <p style="text-align: center">Fig 9. One of many Whatsapp groups finding out about the Summer Internship at URA. I acted innocent, of course.</p>
 <p>By 12:30pm, a lot of people on my campus knew about the Rickroll. The news eventually spread to the admin (the senior year student) and by 1pm it was down 😔. It was good while it lasted.</p>
 <p>I went and told the professor-in-charge about what I did later that week and they didn&rsquo;t seem mad; in fact, it look liked they were trying to hide a smile (but that could be my imagination). The important thing to note here is that <del>I didn&rsquo;t get suspended</del> I told the prof-in-charge and they made sure to make repository private and to change the passwords. Alas, all bad things must come to good end if you&rsquo;re a White Hat (I don&rsquo;t know if this qualifies me, but let&rsquo;s just assume I am one for now).</p>
 <p>And this, my friend, is the humble beginnings of Hackerman. Thank you for coming to my TED Talk<sup>(r)</sup>.</p>
 <p><strong>TL;DR</strong> I got into my Uni&rsquo;s internship portal, created an internship, rick-rolled everyone. High-Effort Memes<br><br></p>
 <p>PostScript: About the <code>I don't have the screenshot of the final screen where hashcat says that the status is cracked, but I provide a slightly less cool alternative at the end of the post.</code>, this is a screenshot of my Desktop running Hashcat with a mask so that you can actually believe me. -_-</p>
-<div style="display: flex; justify-content: center;">
-<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/hashcatWorking.png">
-</div>
+<img src="/img/blog-images/how-i-hacked-my-unis-internship-portal/hashcatWorking.png" class="image-center">
 <p style="text-align: center">Fig 10. Hashacat showing the cracked status on the hash provided (run on my Desktop)</p>
             </div>
             <hr>

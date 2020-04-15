@@ -109,6 +109,44 @@
 </nav>
 </header>
 
+<style>
+@media (max-width: 1250px) {
+	.navbar-header {
+		float: none;
+	}
+	.navbar-left,.navbar-right {
+		float: none !important;
+	}
+	.navbar-toggle {
+		display: block;
+	}
+	.navbar-collapse {
+		border-top: 1px solid transparent;
+		box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+	}
+	.navbar-fixed-top {
+			top: 0;
+			border-width: 0 0 1px;
+		}
+	.navbar-collapse.collapse {
+		display: none!important;
+	}
+	.navbar-nav {
+		float: none!important;
+			margin-top: 7.5px;
+		}
+		.navbar-nav>li {
+		float: none;
+	}
+	.navbar-nav>li>a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.collapse.in{
+		display:block !important;
+	}
+}
+</style>
         <div class="container wrapper">
             <h1>I Made a Website That Hit a Million Views in 2 Weeks</h1>
             <span class="post-date">Apr 15, 2020 </span>
@@ -129,24 +167,20 @@
 <p>Enter Rishab and Srikar, two really smart freshmen who were willing to manually get data from news sources and insert them into the database for a week or two. They were stoked to be helping out on the project and wanted to use this as a chance to learn a bit more about CompSci and how stuff works. Once this was decided, we started working on the website to make it look a bit prettier. In the mean time, Prof Achal set up a small piece of code that let&rsquo;s you download data from a Google Sheet using their API and I integrated that with a program that gets these values at a regular interval to pass it to another program that calculated the summation of the values of the districts. This program also inserted it into the raw html file and pushed it to Github.</p>
 <p>That night (the next morning actually 2020-Mar-14 01:00), I deployed the pages onto <a href="https://www.netlify.com/" target="_blank">netlify</a> and sent a message to everyone saying that our site was live. Srikar and Rishab, now called the ScrapBois, had set up a method that improved with time to gather data. This was it, our work was being shown live! I decided to let the program, now christened as <code>overlord</code>, shutdown for the night as they weren&rsquo;t going to update values in the night. The next morning, I deployed it on a personal computer that runs in my college to keep updating the website and push it to Github so that netlify could build the pages (Continuous (and atomic) Deployment).</p>
 <h3 id="how-it-worked-version-pre-alpha">How it worked (version pre-alpha)</h3>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/diagrams/Diagram-PreAlpha.png" alt="Software Architecture of Covindia version PreAlpha should appear here. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in">
-</div>
+<!-- <div class="image-center"> -->
+<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/diagrams/Diagram-PreAlpha.png" alt="Software Architecture of Covindia version PreAlpha should appear here. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="image-center zoom-in">
+<!-- </div> -->
 <p style="text-align: center">Software Architecture of Covindia Version Pre α (PreAlpha). Boy, was this so simple back then. <span class="visible-if-big">Hover on the image for zooming in.</span></p>
 <p>This version of Covindia was alive for only a few days and was primarily a <a href="https://www.youtube.com/watch?v=lIFE7h3m40U" target="_blank">bodge</a> of a lot of code. I got the India district-wise map from <a href="https://gramener.com/indiamap/" target="_blank">gramener</a> from which I wget-ed their page and sort of reverse engineered the javascript that triggered the colors of the map. In the mean time, Dr. Achal got a program that got data from a Google Sheet. All I had to do was integrate that program with <code>proc</code>. <code>proc</code> computed MaxValue, InfectedCount, District &amp; State List and the individual district counts + values. After computing these numbers, proc read a template html file called <code>base.html</code> and wrote it to <code>index.html</code> with the values. Overlord had the credentials to <a href="https://github.com/CBot-Updater" target="__blank">CBot-Updater</a>'s account on Github and pushed all changes to this <a href="https://github.com/IceCereal/CoronaVisualizer/tree/legacyMaster" target="_blank">Github Repo</a> via this account. We had initial hiccups with a bit of the districts&rsquo; spellings as the map we got was slightly outdated and it was difficult for the ScrapBois to know which were which. Hence, I made a quick list of districts according to the map and they used that for reference.</p>
 <p>Whenever CBot-Updater pushed <code>index.html</code> to Github, netlify was automatically triggered to build and deploy the build (Continuous Deployment) and updating the website for everyone. It was insanely simple the way Netlify set this up. The power of webhooks and web triggers is really mind-blowing.</p>
-<p>Pre-Alpha was launched on Saturday, May 14<sup>th</sup> at around 1:30 in the morning and lasted for 4-ish days until Wednesday, May 18<sup>th</sup>. A major issue that we had to get over was that our college closed down on Sunday due to the Government&rsquo;s order. We no longer could work in front of each other and had to rely on Slack to communicate.</p>
+<p>Pre-Alpha was launched on Saturday, March 14<sup>th</sup> at around 1:30 in the morning and lasted for 4-ish days until Wednesday, March 18<sup>th</sup>. A major issue that we had to get over was that our college closed down on Sunday due to the Government&rsquo;s order. We no longer could work in front of each other and had to rely on Slack to communicate.</p>
 <p>When we got ~2,000 views on Monday, Prof. Achal decided to call in two professors who teach at our college: <a href="https://www.mahindraecolecentrale.edu.in/faculty/bharghava-rajaram" target="_blank">Dr. Bhargava Rajaram</a> and <a href="https://www.mahindraecolecentrale.edu.in/faculty/raj-narayanan" target="_blank">Mr. Raj Narayanan</a>. They were to help us in Marketing, Analytics and Design. As soon as Mr. Raj came in, we had a few major facelifts. Initially we had a black background which got changed to the purple you see on the website. We changed the logo, font&rsquo;s and the placing and the website looked much more pleasing than before.</p>
 <p>On Tuesday, we got two more people: Anchit and Meghana. Anchit was going to help us set up a twitter integration that would help us note errors and latest updates while Meghana would help us out by handling the Twitter account for an initial period.</p>
 <p>On Wednesday, we started to realize that our website started picking up traffic when we saw that we had <strong>30,000</strong> views that day. Time to shift to an Alpha.</p>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/PreAlpha/Analytics.png" alt="Analytics of Covindia version PreAlpha should appear here. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in">
-</div>
+<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/PreAlpha/Analytics.png" alt="Analytics of Covindia version PreAlpha should appear here. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in image-center">
 <p style="text-align: center">Analytics of Covindia Pre-Alpha. Wednesday was when we knew that we were becoming big. <span class="visible-if-big">Hover on the image for zooming in.</span></p>
 <h3 id="how-it-worked-version-alpha">How it worked (version alpha)</h3>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/diagrams/Diagram-Alpha.png" alt="Software Architecture of Covindia version Alpha should appear here. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in">
-</div>
+<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/diagrams/Diagram-Alpha.png" alt="Software Architecture of Covindia version Alpha should appear here. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in image-center">
 <p style="text-align: center">Software Architecture of Covindia Version α (Alpha). Things started getting messy around here. <span class="visible-if-big">Hover on the image for zooming in.</span></p>
 <p><em>Sigh</em>, this is getting hard to type out. I have a lot left to say and I want to sleep. Anyywayyy, the pre-alpha phase was short and definitely not sweet. It was filled with a lot of bugs, was super inefficient and glitchy. Yet it ran and gave us the initial traffic we needed. The alpha phase didn&rsquo;t have much of a difference other than a simple <code>delta()</code> in Proc which calculated the Latest Updates, i.e. the latest five new cases from our database. Not going to lie, it&rsquo;s probably the worst code I&rsquo;ve written in sometime. I definitely &ldquo;over-coded&rdquo; it to a point where it was no longer maintainable. You can find it: <a href="https://github.com/covindia/CovIndia-BigDataBox/blob/2359159447407e7fadc51567824d4cb272e93670/src/BigDataBox/utils/website/latest_updates/latest_updates.py#L106" target="_blank">here</a>. Good luck trying to understand it. It took me a approximately day to get this running and integrated with the website. The Alpha phase consisted more of marketing and minor technical updates that lasted for a few days before we shifted to the beta.</p>
 <p>Towards the beginning of the Alpha phase, we got in three more people: Aman, Rohith and Qurram. Aman, Prof. Achal&rsquo;s cousin, was to be our PandaScrapBoi (Panda because of Python3&rsquo;s Pandas - A Data Analysis Library) who&rsquo;d help out the ScrapBois with getting data, cleaning it up and consolidating them. Rohith was to help out with the front-end of the website. We had a lot of design overhauls that needed to be done along with a lot of minor bugs that had to rectified. I could no longer do all of these by myself and Rohith decided to help us out. After a few days, Qurram joined the team to help us even more with the front-end as the load was just super high. Rohith started working on graphs and analytics and I was working on restructuring a lot of the overall process (which was about to be the beta).</p>
@@ -161,50 +195,38 @@
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Am super proud of the 6 student team <a href="https://twitter.com/StudyatMEC?ref_src=twsrc%5Etfw">@StudyatMEC</a> for their swift thinking and action!<br><br>The user friendly site they created gives a live district-wise update on the number of confirmed cases and fatalities of <a href="https://twitter.com/hashtag/COVID19?src=hash&amp;ref_src=twsrc%5Etfw">#COVID19</a> in the country.<a href="https://t.co/PfYMOUc2HE">https://t.co/PfYMOUc2HE</a> <a href="https://t.co/AEyGanmEtA">https://t.co/AEyGanmEtA</a></p>&mdash; CP Gurnani (@C_P_Gurnani) <a href="https://twitter.com/C_P_Gurnani/status/1240512043943260160?ref_src=twsrc%5Etfw">March 19, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 </div>
 <p>These were two massive boosts to our traffic along with news articles publishing about us and we started getting around 60,000 - 70,000 views a day in the early days of the alpha phase which later became 90,000 views on the last day of the alpha phase. We started getting viewers from other countries as well. The Google Analytics report below shows you the stats:</p>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/Alpha/Analytics.png" alt="Analytics of Covindia version Alpha should appear here. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in">
-</div>
+<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/Alpha/Analytics.png" alt="Analytics of Covindia version Alpha should appear here. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in image-center">
 <p style="text-align: center">Analytics of Covindia Alpha. Wednesday was when we knew that we were becoming big. <span class="visible-if-big">Hover on the image for zooming in.</span></p>
 <p>The Alpha phase lasted about a week before we made major changes to the way the website worked. Hence, enter Beta.</p>
 <h3 id="how-it-worked-version-beta">How it worked (version beta)</h3>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/diagrams/Diagram-Beta.png" alt="Software Architecture of Covindia version Beta should appear here. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in">
-</div>
+<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/diagrams/Diagram-Beta.png" alt="Software Architecture of Covindia version Beta should appear here. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in image-center">
 <p style="text-align: center">Software Architecture of Covindia version β (Beta). If you think things got messy in the beta phase, oh boy... you're yet to see the latest. <span class="visible-if-big">Hover on the image for zooming in.</span></p>
 <p>Our beta phase was when we made a massive jump from inserting data manually in <code>base.html</code> and moving it to a proper server. We got 2 Digital Ocean droplets that were meant to be our host the data for our site. The idea was that when a person hits the page, the data no longer exists in the html; it comes from Digital Ocean servers. Enter Sysadmin Friend (they don&rsquo;t want to be named). They massively helped configure the servers by seting up a DNS Balancer that pointed randomly to one of the two different droplets that was reverse proxied and hosting the app serving data using Caddy. While they did that, I worked on the API which was built with Flask.</p>
 <p>Rather than querying the database every time a client wants the data, I thought it was better to keep a local cached file that updated every 15-ish minutes after computinng the required values from the database. <code>Proc</code> was renamed to <code>Minion</code> which would now compute all desired values and save them in multiple files. <code>Overlord</code>, after summoning <code>Minion</code>, would then distribute the new files to the two droplets. However, I still decided that the raw data of districts shouldn&rsquo;t be put on the server because all it would take is for one person to go through the website and see our API calls that would give them the data that the ScrapBois worked hard to get. This was our biggest drawback and hindrance (this will be explained again in mistakes down below).</p>
 <p>We also got 3 new team members during this time: Mayank, Jayesh and Yukta. Mayank was to help out as a ScrapBoi and a Data Analyser. Jayesh was going to help us get the website in a semi-autopilot mode. Yukta was going to help us out with the design.</p>
 <p>On March 28th, in the middle of our beta, we hit a humongous milestone. <strong>2 weeks after we launched Covindia.com, we reached 1 Million Views.</strong> If only we weren&rsquo;t in the middle of this lockdown, we&rsquo;d have celebrated it.</p>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/Beta/1Million.png" alt="1 Million Views! ... should appear here. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in">
-</div>
+<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/Beta/1Million.png" alt="1 Million Views! ... should appear here. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in image-center">
 <p style="text-align: center">A MILLION VIEWS YEAHHHH<span class="visible-if-big">Hover on the image for zooming in.</span></p>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/Beta/Analytics.png" alt="Analytics of Covindia Version Beta should appear here. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in">
-</div>
+<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/Beta/Analytics.png" alt="Analytics of Covindia Version Beta should appear here. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in image-center">
 <br>
 <p style="text-align: center">Analytics of Covindia Beta<span class="visible-if-big">Hover on the image for zooming in.</span></p>
 <h3 id="how-it-works-current--most-stable-version">How it works (current &amp; most stable version)</h3>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/diagrams/Diagram-Current.png" alt="Software Architecture of Covindia version Latest should appear here. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" id="thingy">
+<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/diagrams/Diagram-Current.png" alt="Software Architecture of Covindia version Latest should appear here. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" id="thingy" class="image-center">
 </div>
 <p style="text-align: center">Software Architecture of Covindia Latest (As of this blog) <button id="thingyTrigger">Toggle here to alternate between COOOL Mode and Normal Mode. This button is way too long.</button> <span class="visible-if-big"> and then hover on the image.</span></p>
 <p><em>I&rsquo;m getting tired of typing now.</em> The latest and current version of the website is in a really good shape. We had major changes done in the backend as well as the front end. I stopped working on the front end in the Beta Phase, yet I still help out in case anything quick pops up. I also integrated a slack webhook called <code>Overlord-Bodyguard</code> that let us know if <code>Overlord</code> was running (this will be covered below in mistakes). Before this, we were manually relying on Overlord to push <code>index.html</code> to Github and we had a Github-Slack integration that let us know whenever there was an update. That is why if you go through the repository, a lot of the commits will be from CBot-Updater who was manually pushing to Github every 15 minutes. If it stopped because of an error, someone would have to notice that CBot-Updater wasn&rsquo;t pushing to Github and then they&rsquo;d have to tell me. Yeah, super inefficient.</p>
 <p>But no longer. In the current version, we have:</p>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/Latest/OverlordAlive.png" alt="Overlord Bodyguard! Reporting for duty!. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh...">
+<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/Latest/OverlordAlive.png" alt="Overlord Bodyguard! Reporting for duty!. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." class="image-center">
 </div>
+<br><br><br>
 <p style="text-align: center">Overlord-Bodyguard is a slack integration I made that updates us whether Overlord is running or not. I know. Cute right? <span class="visible-if-big"> Hovering on this image will get you nothing.</span></p>
 <br>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/Latest/OverlordDied.png" alt="Overlord Bodyguard! Reporting for duty!. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in">
+<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/Latest/OverlordDied.png" alt="Overlord Bodyguard! Reporting for duty!. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in image-center">
 </div>
 <p style="text-align: center">Overlord-Bodyguard when Overlord fails 5 times in a row (very rarely). (Why does this happen? Why does the great Overlord fail? Stay tuned to find out) <span class="visible-if-big"> Hover on the image for zooming in.</span></p>
 <p>One other thing that was done in the current and latest version is that the data for districts is no longer updated in <code>index.html</code>. It now comes through an API call to our server. Therefore, CBot-Updater (which was responsible for pushing <code>index.html</code>) to Github was no longer required and was retired from service (to be honest, we did this shift in the Beta Phase, but it only upgraded to what it is now in the current version).</p>
 <p>We also started to implement crowdsourcing during this time. The number of cases were on the rise and we couldn&rsquo;t let a team of 4 handle all of this. It was getting strenuous for them. Hence, we made a <a href="https://covindia.com/report" target="_blank">report</a> page where people could report new cases and it would go to our server, get processed and be updated in a Google Sheet that our ScrapBois ultimately verified. In just less than a week, we have around 300 people who&rsquo;ve reported numbers that have helped our ScrapBois consolidate data faster:</p>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/Latest/Crowdsourcing.png" alt="Crowdsourcing Image. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in">
-</div>
+<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/Latest/Crowdsourcing.png" alt="Crowdsourcing Image. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in image-center">
 <p style="text-align: center">A screenshot of the crowdsourcing at work. The "Names Go Here" part is where people submit their names if they choose to.<span class="visible-if-big"> Hover on the image for zooming in.</span></p>
 <p>Some of the ScrapBois started building a Telegram Bot (hopefully they make a blog about that) called Sauron who helped crowdsource from a Telegram Group. With these two sources from the crowd, the ScrapBois&rsquo; lives have become slightly easier.</p>
 <p>We also now have a Public API (where people can get our data) that anyone is free to use with the documentation that can be found at: <a href="https://covindia-api-docs.readthedocs.io/en/latest/" target="_blank"><a href="https://covindia-api-docs.readthedocs.io/en/latest/">https://covindia-api-docs.readthedocs.io/en/latest/</a></a> (this was incredibly difficult to write. It took me about 2 days to properly write everything, so pls appreciate it).</p>
@@ -457,39 +479,25 @@ There are a ton of news articles and it can get pretty long on a phone. Therefor
 <p style="text-align: center">We got 10th place yo! I stress on words way too much.</p>
 <h3 id="current-stats">Current Stats</h3>
 <p>It&rsquo;s been exactly one month since Covindia was started and here are the stats:</p>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/CurrentStats/2_3millViews.png" alt="2.3 Million Views. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." class="news">
-</div>
+<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/CurrentStats/2_3millViews.png" alt="2.3 Million Views. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." class="news image-center">
 <p style="text-align: center">We have over 2.3 Million Page Views</p>
 <br>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/CurrentStats/UniqueVisitors.png" alt="~500,000 Unique Visitors. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." class="news">
-</div>
+<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/CurrentStats/UniqueVisitors.png" alt="~500,000 Unique Visitors. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." class="news image-center">
 <p style="text-align: center">Almost 500,000 Unique Visitors</p>
 <br>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/CurrentStats/Bandwidth.png" alt="~1,000 GB Bandwdith. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." class="news">
-</div>
+<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/CurrentStats/Bandwidth.png" alt="~1,000 GB Bandwdith. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." class="news image-center">
 <p style="text-align: center">Close to a 1,000 GB of Bandwidth has been used from our Netlify servers</p>
 <br>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/CurrentStats/ActiveUsers.png" alt="Number of Active Users. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." class="news">
-</div>
+<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/CurrentStats/ActiveUsers.png" alt="Number of Active Users. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." class="news image-center">
 <p style="text-align: center">We had 1,700 active users on the site at our peak.</p>
 <br>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/CurrentStats/DO-AccessLogs.png" alt="Caddy Access Log. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." class="news">
-</div>
+<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/CurrentStats/DO-AccessLogs.png" alt="Caddy Access Log. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." class="news image-center">
 <p style="text-align: center">One of the two load balanced servers' Access Logs shows that it has had 5 Million hits. Multiply that by two and we get 10 Million hits on our API.</p>
 <br>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/CurrentStats/Map.png" alt="Heat Map of Visitors by Country. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in">
-</div>
+<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/CurrentStats/Map.png" alt="Heat Map of Visitors by Country. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in image-center">
 <p style="text-align: center">Where are viewers are from. <span class="visible-if-big"> Hover on the image for zooming in.</span></p>
 <br>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/CurrentStats/CountriesTable.png" alt="Countries Table. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in">
-</div>
+<img src="/img/blog-images/i-made-a-website-that-hit-a-million-views-in-2-weeks/CurrentStats/CountriesTable.png" alt="Countries Table. If it isn't here, something went wrong. Stupid website dev. Who made it anyway? Oh..." width="450px" class="zoom-in image-center">
 <p style="text-align: center">Number of users by country (Top 18). We have had hits from <b>150 countries</b><span class="visible-if-big"> Hover on the image for zooming in.</span></p>
 <br>
 <h3 id="post-script">Post Script</h3>

@@ -109,6 +109,44 @@
 </nav>
 </header>
 
+<style>
+@media (max-width: 1250px) {
+	.navbar-header {
+		float: none;
+	}
+	.navbar-left,.navbar-right {
+		float: none !important;
+	}
+	.navbar-toggle {
+		display: block;
+	}
+	.navbar-collapse {
+		border-top: 1px solid transparent;
+		box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+	}
+	.navbar-fixed-top {
+			top: 0;
+			border-width: 0 0 1px;
+		}
+	.navbar-collapse.collapse {
+		display: none!important;
+	}
+	.navbar-nav {
+		float: none!important;
+			margin-top: 7.5px;
+		}
+		.navbar-nav>li {
+		float: none;
+	}
+	.navbar-nav>li>a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.collapse.in{
+		display:block !important;
+	}
+}
+</style>
         <div class="container wrapper">
             <h1>Projects</h1>
             <span class="post-date">Mar 21, 2019 </span>
@@ -154,13 +192,9 @@ This is the second version of my first <code>Discord Bot</code>. It was a very d
 <p><a href="https://github.com/IceCereal/HackWeek-3-Game"><i style="margin-left:0em;margin-right:0em;color:blue;" class="fa fa-link fa-1x;"></i></a> I know, a <em>very</em> original name. This was a game I made with some 1<sup>st</sup> years for a Hackweek conducted by Enigma. I wrote all of it from scratch in PyGame. You feed it an image (any image) and it converts it to a map. You can play your game on this pixelated map and your objective is to find keys. The last updated version on my laptop seems to have been deleted and the repository is ~8 commits behind. I don&rsquo;t know if I will ever update it so that the repo&rsquo;s current code isn&rsquo;t buggy because &hellip; life. But, yeh -_-</p>
 <h3 id="psygan">PsyGAN</h3>
 <p>Early 2019, our college got a <a href="https://economictimes.indiatimes.com/tech/hardware/mahindra-ecole-centrale-launches-supercomputer-lab/articleshow/71203120.cms">supercomputer</a>. Desperate to try it out, I deployed a Generative Adversial Network to generate Psychedelic Images. I couldn&rsquo;t find a decent enough dataset, so I had to make a <a href="https://gist.github.com/IceCereal/60976aae6288b13173f17818ac702ce2">program</a> (bot) to download data from a particular data from a Subreddit. I was able to get 881 pictures from <a href="https://www.reddit.com/r/psychedelicartwork/top/?t=all">r/PsychedelicArt</a> (not enough -_-) and after loading a basic GAN Template from PyTorch, I was able to train a GAN that made this in 22 hours after 150 Epochs:</p>
-<div style="display: flex; justify-content: center">
-<img src="/img/fake_samples_epoch_149.png" width="35%" height="35%">
-</div>
+<img src="/img/fake_samples_epoch_149.png" width="35%" height="35%" class="image-center">
 <p style="text-align: center"> This is the final image (150<sup>th</sup> Epoch) </p>
-<div style="display: flex; justify-content: center">
-<img src="/img/Timelapse-extended-small-size.gif">
-</div>
+<img src="/img/Timelapse-extended-small-size.gif" class="image-center">
 <p style="text-align: center"> This is a GIF of the progress </p>
 <p>This may not look like much, but it&rsquo;s unimaginable that a computer was able to <strong>learn</strong> the patterns involved and make this from scratch with information from only 881 images. Happiness! ┐(￣ヮ￣)┌</p>
 <h3 id="dell-emc-hackathon-ai-enabled-cart-conversion">Dell EMC Hackathon: AI-Enabled Cart Conversion</h3>

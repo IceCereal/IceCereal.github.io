@@ -109,6 +109,44 @@
 </nav>
 </header>
 
+<style>
+@media (max-width: 1250px) {
+	.navbar-header {
+		float: none;
+	}
+	.navbar-left,.navbar-right {
+		float: none !important;
+	}
+	.navbar-toggle {
+		display: block;
+	}
+	.navbar-collapse {
+		border-top: 1px solid transparent;
+		box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+	}
+	.navbar-fixed-top {
+			top: 0;
+			border-width: 0 0 1px;
+		}
+	.navbar-collapse.collapse {
+		display: none!important;
+	}
+	.navbar-nav {
+		float: none!important;
+			margin-top: 7.5px;
+		}
+		.navbar-nav>li {
+		float: none;
+	}
+	.navbar-nav>li>a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.collapse.in{
+		display:block !important;
+	}
+}
+</style>
         <div class="container wrapper">
             <h1>Tips Fedora 31</h1>
             <span class="post-date">Dec 25, 2019 </span>
@@ -119,17 +157,11 @@
 <p>However, it kept freezing for a few seconds every 5-10 minutes. That&rsquo;s when I realized that Fedora was running on Wayland and not X11. So I switched over to X11 and everything worked seamlessly. The next few hours were just setting up my shell, theme, wallpaper, partitions and restoring my data (I very seriously love duplicity).</p>
 <p>Once everything was set up, I decided to make my life even more miserable by insatlling <a href="https://i3wm.org/" target="_blank">i3</a>, a tiling window manager. I&rsquo;ve used i3 very briefly before and it went over my head that time. This time, I wanted my work to be as efficient as possible and that meant reducing my mouse interaction as much as possible (you <em>do</em> use your mouse in i3 occasionally, but it&rsquo;s not that much).</p>
 <p>Below is a screenshot of how i3 looks on my 2 monitor setup (casual flex). <br><br></p>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/tips-fedora-31/i3wmScreenshot.png">
-</div>
+<img src="/img/blog-images/tips-fedora-31/i3wmScreenshot.png" class="image-center">
 <p style="text-align: center">i3 tiling window manager</p> <br><br>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/tips-fedora-31/wallpaper.png">
-</div>
+<img src="/img/blog-images/tips-fedora-31/wallpaper.png" class="image-center">
 <p style="text-align: center">I have a sweet desktop wallpaper</p><br>
-<div style="display: flex; justify-content: center">
-<img src="/img/blog-images/tips-fedora-31/lockscreen.png">
-</div>
+<img src="/img/blog-images/tips-fedora-31/lockscreen.png" class="image-center">
 <p style="text-align: center">I also have a sweet lockscreen wallpaper: <a href="https://drive.google.com/drive/folders/1f12o8ea-JvXeeAFRKsAwTb_UVp2meDYG">link</a> to both</p>
 <hr>
 <p>In other news, I finally put off watching the last season of The Big Bang Theory <strong>(no spoilers here)</strong> and watched it over the past few days. I&rsquo;ve been watching it since 2013 (Season 7) and I guess I didn&rsquo;t watch the final season because I didn&rsquo;t want the show to end. As expected, the last episode made me feel sad. It made me feel sad because we&rsquo;d never see Amy, Bernadette, Howard, Leonard, Penny, Raj and Sheldon on the screen again. These were the characters that I grew up with for 7 years and they had become a normal part of my living (I know it sounds very cheesy). Just thinking about never seeing them again made me feel a strange melancholy and an unnerving unease. To the characters, I bid you all aideu.</p>
