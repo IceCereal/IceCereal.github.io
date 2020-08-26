@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
 
-    <head>
-        <title> Working With Android Studio &middot; IceCereal </title>
+	<head>
+		<title> Subcodes &middot; IceCereal </title>
 
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 <meta name="generator" content="Hugo 0.68.3" />
 
@@ -44,10 +44,10 @@
 
 
 
-    </head>
+	</head>
 
-    <body>
-        <header>
+	<body>
+		<header>
 <nav class="navbar navbar-default navbar-fixed-top font-header" style="height:2.27em;">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -147,21 +147,53 @@
 	}
 }
 </style>
-        <div class="container wrapper">
-            <h1>Working With Android Studio</h1>
-            <span class="post-date">Jan 14, 2020 </span>
-            <div class="post-content">
-                <p>5 of my friends and I have a pretty cool idea for an app. We&rsquo;ve been discussing it non-stop for the past 4-5 days and trying to decide what our app should be. It all started from a simple and primitive idea and it evolved to a pretty decent stage now. I&rsquo;m not going to discuss the app idea here because it&rsquo;s in its primitive stage (and what if my 1 reader (including me) steals the idea?).</p>
-<p>We&rsquo;ve decided to split the work into the server and the app. The app is further split into the front-end and two back-ends. One is the back-end connected to the front-end the other is the back-end connected to the server. Since we&rsquo;re in the primitive stage, the roles haven&rsquo;t been decided other than who&rsquo;s working on the app and who&rsquo;s working on the server. For now, I&rsquo;m working on a bit of integration in the app itself and am primarily trying to figure that out.</p>
-<p>We initially tried to use <a href="https://flutter.dev/" target="_blank">Flutter</a>, but then we couldn&rsquo;t find libraries sophisticated enough to satistfy our needs, i.e. they exist only for Android Studio at the moment. One of our professors also says that they&rsquo;ve experienced a difficult time with Cross-Platform Dev tools like React in the past. So we decided to shift to Android Studio for now (sorry rich iOS users).</p>
-<p>I attempted to learn Android Studio in my 11<sup>th</sup> and 12<sup>th</sup> grade, but I never understood it. However, now that I understand how stuff works in general, I feel like I&rsquo;ve understood a lot of Android Studio and the Android OS in general over the past few days.</p>
-<p>If our app ever makes it to the play store, all my 1 readers (including me) will be happy to know that I&rsquo;ll link it here.</p>
+		<div class="container wrapper">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<h1 id=>Subcodes</h1>
+				</div>
+			</div>
+			<ul id="post-list">
+                	
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://icecereal.github.io/subcodes/dinogame/">Brick Breaker</a></h4>
+							<h4 class="post-date">Dec 21, 2016</h4>
+						</div>
+						<div class="post-summary"><p>Your fault if your eyes bleed after seeing this crap. Before the actual code itself, here are a few screenshots. The legs &ldquo;moved in a circle&rdquo;.
+Exhibit A (notice the legs) Exhibit B (notice the legs) Omg it did a jump 
+THE POINT OF NO RETURN:
+#include&lt;iostream.h&gt;#include&lt;conio.h&gt;#include&lt;graphics.h&gt;#include&lt;dos.h&gt;#include&lt;stdio.h&gt;#include&lt;process.h&gt;struct dude{float x,y,z;}b;int x,y,z;int pixel=0;void drawbullet();void drawred();void drawred1();void drawbullet1();void gameover();void pixel1();void pixel2();void pixel3();void hit();void main(){clrscr();int gdriver = DETECT, gmode, errorcode;initgraph(&amp;gdriver, &amp;gmode, &#34;C:\\TC\\BGI&#34;);outtextxy(100,35,&#34;Press w to Start &amp; Jump dont press w continuosly&#34;);setcolor(getmaxcolor());int p= getmaxx();int q = getmaxy()/2;y=q-10;x=p/5;z=p/5-200;setfillstyle(1,WHITE);fillellipse(600,40,30,30);setcolor(BLACK);setfillstyle(1,0);fillellipse(540,40,70,50);b.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://icecereal.github.io/subcodes/dinogame/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="http://icecereal.github.io/subcodes/brickbreaker/">Brick Breaker</a></h4>
+							<h4 class="post-date">Oct 15, 2016</h4>
+						</div>
+						<div class="post-summary"><p>Your fault if your eyes bleed after seeing this crap. Before the actual code itself, here are a few screenshots.
+Exhibit A Exhibit B The Main Menu The Game Over Screen "Would You Like To Enter Your Name" in a disgusting font? No, I really would not. THE POINT OF NO RETURN:
+#include &#34;all.h&#34;int gx, gy;//GETMAXX(), GETMAXY()int px, py;//PAD_X, PAD_Yfloat bx, by;//BALL_X,BALL_Yfloat vbx=0,vby=0;//Velocity_ball_x, Velocity_ball_yint score = 0;int rel_ball = 0;float liner = 1;int sound_chk = 1;int s = 1;void key();void changevelball();void drawballline();void choosevel();void draw_pad();void drawbricks(int, int);void ball();void ball_chk();void chkbrick();void esc_key();void score_disp();void name_enter();void get_name();void put_in_file();void sound_func(int);void main_menu();class bricks{public:int x[20], y[20], bool[20];bricks(){for (int i =0;i&lt;20;i++)bool[i] = 1;}void bricks_chk();void assign_brick();}b;void bricks::bricks_chk(){int i = 0;for(i;i&lt;20;i++){if (bool[i] == 1){setcolor(RED);drawbricks(x[i],y[i]);}if (bool[i] == 0){setcolor(BLACK);drawbricks(x[i],y[i]);}}}void bricks::assign_brick(){for (int i =0;i&lt;10;i++){x[i] = gx/14 + (40*i);y[i] = gy/7;}for (i;i&lt;20;i++){x[i] = (i-8)*gx/14 + 10;y[i] = gy/10;}}class data_for_storage{public:char name[30];int t_score;}dot;void main(){clrscr();int gdriver = DETECT,gmode;initgraph(&amp;gdriver,&amp;gmode,&#34;C:\\TC\\BGI&#34;);gx = getmaxx();gy = getmaxy();px = gx/2;bx = gx/2 ;by = gy - 34;b.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="http://icecereal.github.io/subcodes/brickbreaker/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+			</ul>
+            
 
-            </div>
-            <hr>
-            <span style="float: right;">-IceCereal</span>
-            <br><br>
-            <footer class="footer text-center">
+
+
+			<div class="push"></div>
+		</div>
+		<footer class="footer text-center">
 	<div class="row">
 		<div class="col-xs-12 user-social text-center">
 		
@@ -225,14 +257,5 @@
 </p>
 </footer>
 
-        
-            
-            <div class="post-comments">
-                
-            </div>
-            
-            <div class="push"></div>
-        </div>
-
-        
-    </body>
+	</body>
+</html>

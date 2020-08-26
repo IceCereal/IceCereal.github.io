@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Subcodes on IceCereal</title>
+    <link>http://icecereal.github.io/subcodes/</link>
+    <description>Recent content in Subcodes on IceCereal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Dec 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://icecereal.github.io/subcodes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Brick Breaker</title>
+      <link>http://icecereal.github.io/subcodes/dinogame/</link>
+      <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://icecereal.github.io/subcodes/dinogame/</guid>
+      <description>Your fault if your eyes bleed after seeing this crap. Before the actual code itself, here are a few screenshots. The legs &amp;ldquo;moved in a circle&amp;rdquo;.
+Exhibit A (notice the legs) Exhibit B (notice the legs) Omg it did a jump 
+THE POINT OF NO RETURN:
+#include&amp;lt;iostream.h&amp;gt;#include&amp;lt;conio.h&amp;gt;#include&amp;lt;graphics.h&amp;gt;#include&amp;lt;dos.h&amp;gt;#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;process.h&amp;gt;struct dude{float x,y,z;}b;int x,y,z;int pixel=0;void drawbullet();void drawred();void drawred1();void drawbullet1();void gameover();void pixel1();void pixel2();void pixel3();void hit();void main(){clrscr();int gdriver = DETECT, gmode, errorcode;initgraph(&amp;amp;gdriver, &amp;amp;gmode, &amp;#34;C:\\TC\\BGI&amp;#34;);outtextxy(100,35,&amp;#34;Press w to Start &amp;amp; Jump dont press w continuosly&amp;#34;);setcolor(getmaxcolor());int p= getmaxx();int q = getmaxy()/2;y=q-10;x=p/5;z=p/5-200;setfillstyle(1,WHITE);fillellipse(600,40,30,30);setcolor(BLACK);setfillstyle(1,0);fillellipse(540,40,70,50);b.</description>
+    </item>
+    
+    <item>
+      <title>Brick Breaker</title>
+      <link>http://icecereal.github.io/subcodes/brickbreaker/</link>
+      <pubDate>Sat, 15 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://icecereal.github.io/subcodes/brickbreaker/</guid>
+      <description>Your fault if your eyes bleed after seeing this crap. Before the actual code itself, here are a few screenshots.
+Exhibit A Exhibit B The Main Menu The Game Over Screen &#34;Would You Like To Enter Your Name&#34; in a disgusting font? No, I really would not. THE POINT OF NO RETURN:
+#include &amp;#34;all.h&amp;#34;int gx, gy;//GETMAXX(), GETMAXY()int px, py;//PAD_X, PAD_Yfloat bx, by;//BALL_X,BALL_Yfloat vbx=0,vby=0;//Velocity_ball_x, Velocity_ball_yint score = 0;int rel_ball = 0;float liner = 1;int sound_chk = 1;int s = 1;void key();void changevelball();void drawballline();void choosevel();void draw_pad();void drawbricks(int, int);void ball();void ball_chk();void chkbrick();void esc_key();void score_disp();void name_enter();void get_name();void put_in_file();void sound_func(int);void main_menu();class bricks{public:int x[20], y[20], bool[20];bricks(){for (int i =0;i&amp;lt;20;i++)bool[i] = 1;}void bricks_chk();void assign_brick();}b;void bricks::bricks_chk(){int i = 0;for(i;i&amp;lt;20;i++){if (bool[i] == 1){setcolor(RED);drawbricks(x[i],y[i]);}if (bool[i] == 0){setcolor(BLACK);drawbricks(x[i],y[i]);}}}void bricks::assign_brick(){for (int i =0;i&amp;lt;10;i++){x[i] = gx/14 + (40*i);y[i] = gy/7;}for (i;i&amp;lt;20;i++){x[i] = (i-8)*gx/14 + 10;y[i] = gy/10;}}class data_for_storage{public:char name[30];int t_score;}dot;void main(){clrscr();int gdriver = DETECT,gmode;initgraph(&amp;amp;gdriver,&amp;amp;gmode,&amp;#34;C:\\TC\\BGI&amp;#34;);gx = getmaxx();gy = getmaxy();px = gx/2;bx = gx/2 ;by = gy - 34;b.</description>
+    </item>
+    
+  </channel>
+</rss>

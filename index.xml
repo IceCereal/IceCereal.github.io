@@ -165,9 +165,8 @@ I went to a market meant for electronics yesterday to buy some electronic compon
       <pubDate>Thu, 21 Mar 2019 17:12:36 +0530</pubDate>
       
       <guid>http://icecereal.github.io/projects/</guid>
-      <description>These are the projects I have worked on / I am working on. These are displayed in random order.
-MemeTaker_Bot  One of the first bots I developed. This bot was developed to fetch a meme from 4 defined subreddits and download the meme using wget. This program was called by my more, ambitious SuperUserBot_V2. It also makes sure that the meme has not been downloaded before.
-SuperUserBot_V2  This is the second version of my first Discord Bot.</description>
+      <description>This page contains big-ish projects, hackathon projects, small-ish projects and miscellaneous projects that I&amp;rsquo;ve worked on.
+Big-ish Projects PsyGAN Early 2019, our college got a supercomputer. Desperate to try it out, I deployed a Generative Adversial Network to generate Psychedelic Images. I couldn&amp;rsquo;t find a decent enough dataset, so I had to make a program (bot) to download data from a particular data from a Subreddit. I was able to get 881 pictures from r/PsychedelicArt (not enough -_-) and after loading a basic GAN Template from PyTorch, I was able to train a GAN that made this in 22 hours after 150 Epochs:</description>
     </item>
     
     <item>
@@ -181,15 +180,48 @@ SuperUserBot_V2  This is the second version of my first Discord Bot.</descriptio
     </item>
     
     <item>
-      <title>About_Me</title>
+      <title>Brick Breaker</title>
+      <link>http://icecereal.github.io/subcodes/dinogame/</link>
+      <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://icecereal.github.io/subcodes/dinogame/</guid>
+      <description>Your fault if your eyes bleed after seeing this crap. Before the actual code itself, here are a few screenshots. The legs &amp;ldquo;moved in a circle&amp;rdquo;.
+Exhibit A (notice the legs) Exhibit B (notice the legs) Omg it did a jump 
+THE POINT OF NO RETURN:
+#include&amp;lt;iostream.h&amp;gt;#include&amp;lt;conio.h&amp;gt;#include&amp;lt;graphics.h&amp;gt;#include&amp;lt;dos.h&amp;gt;#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;process.h&amp;gt;struct dude{float x,y,z;}b;int x,y,z;int pixel=0;void drawbullet();void drawred();void drawred1();void drawbullet1();void gameover();void pixel1();void pixel2();void pixel3();void hit();void main(){clrscr();int gdriver = DETECT, gmode, errorcode;initgraph(&amp;amp;gdriver, &amp;amp;gmode, &amp;#34;C:\\TC\\BGI&amp;#34;);outtextxy(100,35,&amp;#34;Press w to Start &amp;amp; Jump dont press w continuosly&amp;#34;);setcolor(getmaxcolor());int p= getmaxx();int q = getmaxy()/2;y=q-10;x=p/5;z=p/5-200;setfillstyle(1,WHITE);fillellipse(600,40,30,30);setcolor(BLACK);setfillstyle(1,0);fillellipse(540,40,70,50);b.</description>
+    </item>
+    
+    <item>
+      <title>Brick Breaker</title>
+      <link>http://icecereal.github.io/subcodes/brickbreaker/</link>
+      <pubDate>Sat, 15 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://icecereal.github.io/subcodes/brickbreaker/</guid>
+      <description>Your fault if your eyes bleed after seeing this crap. Before the actual code itself, here are a few screenshots.
+Exhibit A Exhibit B The Main Menu The Game Over Screen &#34;Would You Like To Enter Your Name&#34; in a disgusting font? No, I really would not. THE POINT OF NO RETURN:
+#include &amp;#34;all.h&amp;#34;int gx, gy;//GETMAXX(), GETMAXY()int px, py;//PAD_X, PAD_Yfloat bx, by;//BALL_X,BALL_Yfloat vbx=0,vby=0;//Velocity_ball_x, Velocity_ball_yint score = 0;int rel_ball = 0;float liner = 1;int sound_chk = 1;int s = 1;void key();void changevelball();void drawballline();void choosevel();void draw_pad();void drawbricks(int, int);void ball();void ball_chk();void chkbrick();void esc_key();void score_disp();void name_enter();void get_name();void put_in_file();void sound_func(int);void main_menu();class bricks{public:int x[20], y[20], bool[20];bricks(){for (int i =0;i&amp;lt;20;i++)bool[i] = 1;}void bricks_chk();void assign_brick();}b;void bricks::bricks_chk(){int i = 0;for(i;i&amp;lt;20;i++){if (bool[i] == 1){setcolor(RED);drawbricks(x[i],y[i]);}if (bool[i] == 0){setcolor(BLACK);drawbricks(x[i],y[i]);}}}void bricks::assign_brick(){for (int i =0;i&amp;lt;10;i++){x[i] = gx/14 + (40*i);y[i] = gy/7;}for (i;i&amp;lt;20;i++){x[i] = (i-8)*gx/14 + 10;y[i] = gy/10;}}class data_for_storage{public:char name[30];int t_score;}dot;void main(){clrscr();int gdriver = DETECT,gmode;initgraph(&amp;amp;gdriver,&amp;amp;gmode,&amp;#34;C:\\TC\\BGI&amp;#34;);gx = getmaxx();gy = getmaxy();px = gx/2;bx = gx/2 ;by = gy - 34;b.</description>
+    </item>
+    
+    <item>
+      <title>About Me</title>
       <link>http://icecereal.github.io/about_me/</link>
       <pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate>
       
       <guid>http://icecereal.github.io/about_me/</guid>
       <description>Name: Raghav NS
-Date Of Birth: 1999-Oct-30
+Year Of Birth: 1999
 Email: raghav170555@mechyd.ac.in
-Intro: I like to program. I started to code in 7th grade when I learnt BASIC after which I learnt C in 8th grade. 2 years later, I started learning C++ in 11th and 12th grade. I like anime, playing instruments, tinkering with electronics, listening to Lo-Fi and drinking juice. I want to set up a company and be an entrepreneur or do a PhD in Computer Science or both.</description>
+Introduction [The TL;DR] I&amp;rsquo;m a highly passionate, motivated and curious person. These three aspects of who I am represent what I like to do the most: explore. This coupled with my mind not liking to be left in idle makes me always working on numerous projects / ideas simultaneously. I&amp;rsquo;ve been interested in how computers work ever since I can remember touching a computer, which was before I could even articulate properly.</description>
+    </item>
+    
+    <item>
+      <title>Achievements, Important Projects, Internships and Positions Held</title>
+      <link>http://icecereal.github.io/achievements/</link>
+      <pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate>
+      
+      <guid>http://icecereal.github.io/achievements/</guid>
+      <description>What This Page Is For Turns out I win a lot of things, work on a lot of things, intern quite a few times and take charge of numerous events. Also turns out adding all this info to an about page clutters it. Hence, this page contains the details of important projects I&amp;rsquo;ve worked on, achievements I&amp;rsquo;ve won, the internships I&amp;rsquo;ve done and positions I&amp;rsquo;ve held.
+Covindia From Mid-March 2020 to May 2020, I was the Project Maintainer for Covindia.</description>
     </item>
     
   </channel>

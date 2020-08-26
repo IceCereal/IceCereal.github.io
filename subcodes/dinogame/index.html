@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Brick Breaker &middot; IceCereal </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.68.3" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="css/nix.css">
+<link rel="stylesheet" href="../css/nix.css">
+<link rel="stylesheet" href="../../css/nix.css">
+<link rel="stylesheet" href="../../../css/nix.css">
+
+<link rel="stylesheet" href="http://icecereal.github.io/css/nix.css">
+
+
+
+
+<link rel="shortcut icon" href="Kurisu-Icon.png">
+<link rel="shortcut icon" href="../Kurisu-Icon.png">
+<link rel="shortcut icon" href="../../Kurisu-Icon.png">
+<link rel="shortcut icon" href="../../../Kurisu-Icon.png">
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top font-header" style="height:2.27em;">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://icecereal.github.io/ style="font-size: 1.5em;background-color:rgba(0,0,0,0.75);">raghav@IceCereal ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right" style="margin-top:0.2em;">
+				<li>
+					<a href="http://icecereal.github.io/" style="color:black;background-color:#d4d4d4;height:2em;">/home/raghav</a>
+				</li>
+				
+				
+				<li class="dropdown">
+                    
+            		<a href="/about_me/" style="color:black;background-color:#d4d4d4;height:2em;">~/about_me</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+            		<a href="/achievements/" style="color:black;background-color:#d4d4d4;height:2em;">~/achievements</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+            		<a href="/blog/" style="color:black;background-color:#d4d4d4;height:2em;">~/blog</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+            		<a href="/projects/" style="color:black;background-color:#d4d4d4;height:2em;">~/projects</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+            		<a href="https://drive.google.com/open?id=1HN2eJhQxX9aLqHOIWteF2MEHC9hhVPOQ" style="color:black;background-color:#d4d4d4;height:2em;">~/resume</a>
+            		
+        		</li>
+        		
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+<style>
+@media (max-width: 1250px) {
+	.navbar-header {
+		float: none;
+	}
+	.navbar-left,.navbar-right {
+		float: none !important;
+	}
+	.navbar-toggle {
+		display: block;
+	}
+	.navbar-collapse {
+		border-top: 1px solid transparent;
+		box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+	}
+	.navbar-fixed-top {
+			top: 0;
+			border-width: 0 0 1px;
+		}
+	.navbar-collapse.collapse {
+		display: none!important;
+	}
+	.navbar-nav {
+		float: none!important;
+			margin-top: 7.5px;
+		}
+		.navbar-nav>li {
+		float: none;
+	}
+	.navbar-nav>li>a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.collapse.in{
+		display:block !important;
+	}
+}
+</style>
+        <div class="container wrapper">
+            <h1>Brick Breaker</h1>
+            <span class="post-date">Dec 21, 2016 </span>
+            <div class="post-content">
+                <p>Your fault if your eyes bleed after seeing this crap. Before the actual code itself, here are a few screenshots. The legs &ldquo;moved in a circle&rdquo;.</p>
+<img src="/img/subcodes/dinogame1.png" width="35%" height="35%" class="image-center">
+<p style="text-align: center"> Exhibit A (notice the legs) </p><br><br>
+<img src="/img/subcodes/dinogame2.png" width="35%" height="35%" class="image-center">
+<p style="text-align: center"> Exhibit B (notice the legs) </p><br><br>
+<img src="/img/subcodes/dinogame3.png" width="35%" height="35%" class="image-center">
+<p style="text-align: center"> Omg it did a jump </p>
+<p><br><br></p>
+<p>THE POINT OF NO RETURN:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;iostream.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;conio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;graphics.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;dos.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;process.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">dude</span>
+{
+<span style="color:#66d9ef">float</span> x,y,z;
+}b;
+<span style="color:#66d9ef">int</span> x,y,z;
+
+<span style="color:#66d9ef">int</span> pixel<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">drawbullet</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">drawred</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">drawred1</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">drawbullet1</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">gameover</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">pixel1</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">pixel2</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">pixel3</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">hit</span>();
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>()
+{
+clrscr();
+
+
+ <span style="color:#66d9ef">int</span> gdriver <span style="color:#f92672">=</span> DETECT, gmode, errorcode;
+ initgraph(<span style="color:#f92672">&amp;</span>gdriver, <span style="color:#f92672">&amp;</span>gmode, <span style="color:#e6db74">&#34;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">TC</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">BGI&#34;</span>);
+
+
+ outtextxy(<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">35</span>,<span style="color:#e6db74">&#34;Press w to Start &amp; Jump   dont press w continuosly&#34;</span>);
+   setcolor(getmaxcolor());
+<span style="color:#66d9ef">int</span> p<span style="color:#f92672">=</span> getmaxx();
+<span style="color:#66d9ef">int</span> q <span style="color:#f92672">=</span> getmaxy()<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>;
+y<span style="color:#f92672">=</span>q<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>;
+x<span style="color:#f92672">=</span>p<span style="color:#f92672">/</span><span style="color:#ae81ff">5</span>;
+z<span style="color:#f92672">=</span>p<span style="color:#f92672">/</span><span style="color:#ae81ff">5</span><span style="color:#f92672">-</span><span style="color:#ae81ff">200</span>;
+setfillstyle(<span style="color:#ae81ff">1</span>,WHITE);
+fillellipse(<span style="color:#ae81ff">600</span>,<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">30</span>,<span style="color:#ae81ff">30</span>);
+setcolor(BLACK);
+setfillstyle(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>);
+fillellipse(<span style="color:#ae81ff">540</span>,<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">70</span>,<span style="color:#ae81ff">50</span>);
+
+
+b.z<span style="color:#f92672">=</span>getmaxx()<span style="color:#f92672">+</span><span style="color:#ae81ff">300</span>;
+b.x <span style="color:#f92672">=</span> getmaxx()<span style="color:#f92672">+</span><span style="color:#ae81ff">100</span>;
+<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>;i<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">--</span>)
+{
+ <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;j<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>;)
+{
+
+
+ setcolor(<span style="color:#ae81ff">5</span>);
+ line(<span style="color:#ae81ff">0</span>, q, p,q);
+    <span style="color:#66d9ef">if</span>(kbhit())
+  {
+   hit();
+   <span style="color:#75715e">/*closegraph();
+</span><span style="color:#75715e">   exit(0);*/</span>
+  }
+  setcolor(BLACK);
+  drawbullet();
+  drawbullet1();
+  b.x <span style="color:#f92672">=</span> b.x <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+  b.z<span style="color:#f92672">=</span>b.z<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+  setcolor(RED);
+  drawred();
+  drawred1();
+
+  <span style="color:#66d9ef">if</span>(b.x<span style="color:#f92672">&lt;-</span><span style="color:#ae81ff">20</span>)
+  {
+  b.x<span style="color:#f92672">=</span>getmaxx();
+  }
+  <span style="color:#66d9ef">if</span>(b.z<span style="color:#f92672">&lt;-</span><span style="color:#ae81ff">180</span>)
+  b.z<span style="color:#f92672">=</span>getmaxx();
+
+  gameover();
+  <span style="color:#66d9ef">if</span>(pixel<span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>)
+   pixel1();
+  <span style="color:#66d9ef">if</span> (pixel<span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>)
+   pixel2();
+  <span style="color:#66d9ef">else</span>
+   pixel3();
+
+  pixel<span style="color:#f92672">++</span>;
+}
+}}
+
+
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">hit</span>()
+{
+ <span style="color:#66d9ef">char</span> ch<span style="color:#f92672">=</span>getche();
+<span style="color:#66d9ef">switch</span> (ch)
+{<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;q&#39;</span><span style="color:#f92672">:</span>exit(<span style="color:#ae81ff">0</span>);
+ <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;Q&#39;</span><span style="color:#f92672">:</span>exit(<span style="color:#ae81ff">0</span>);
+ <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;w&#39;</span><span style="color:#f92672">:</span>
+ <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;W&#39;</span><span style="color:#f92672">:</span>
+ {
+ <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;j<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">91</span>;j<span style="color:#f92672">++</span>)
+ {
+  setcolor(BLACK);
+  drawbullet();
+  drawbullet1();
+  b.z<span style="color:#f92672">=</span>b.z<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+  b.x <span style="color:#f92672">=</span> b.x <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+  <span style="color:#66d9ef">if</span>(pixel<span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>)
+   pixel1();
+  <span style="color:#66d9ef">if</span> (pixel<span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>)
+   pixel2();
+  <span style="color:#66d9ef">else</span>
+   pixel3();
+  y<span style="color:#f92672">--</span>;
+ setcolor(<span style="color:#ae81ff">5</span>);
+ line(<span style="color:#ae81ff">0</span>,getmaxy()<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>, getmaxx(),getmaxy()<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>);
+  setcolor(WHITE);
+  <span style="color:#66d9ef">if</span>(pixel<span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>)
+   pixel1();
+  <span style="color:#66d9ef">if</span> (pixel<span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>)
+   pixel2();
+  <span style="color:#66d9ef">else</span>
+   pixel3();
+  setcolor(RED);
+  drawred();
+  drawred1();
+
+  delay(<span style="color:#ae81ff">1</span>);
+ }
+ <span style="color:#66d9ef">for</span>(j <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;j<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">91</span>;j<span style="color:#f92672">++</span>)
+ {
+  setcolor(BLACK);
+  drawbullet();
+  drawbullet1();
+  b.x <span style="color:#f92672">=</span> b.x <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+  b.z<span style="color:#f92672">=</span>b.z<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+  <span style="color:#66d9ef">if</span>(pixel<span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>)
+   pixel1();
+  <span style="color:#66d9ef">if</span> (pixel<span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>)
+   pixel2();
+  <span style="color:#66d9ef">else</span>
+   pixel3();
+  y<span style="color:#f92672">++</span>;
+  setcolor(<span style="color:#ae81ff">5</span>);
+ line(<span style="color:#ae81ff">0</span>,getmaxy()<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>, getmaxx(),getmaxy()<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>);
+  setcolor(WHITE);
+  <span style="color:#66d9ef">if</span>(pixel<span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>)
+   pixel1();
+  <span style="color:#66d9ef">if</span> (pixel<span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>)
+   pixel2();
+  <span style="color:#66d9ef">else</span>
+   pixel3();
+
+  setcolor(RED);
+  drawred();
+  drawred1();
+  delay(<span style="color:#ae81ff">1</span>);
+ }
+ <span style="color:#66d9ef">break</span>;
+ }
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">27</span><span style="color:#f92672">:</span>
+ closegraph();
+ exit(<span style="color:#ae81ff">0</span>);
+ <span style="color:#66d9ef">break</span>;
+}
+setcolor(WHITE);
+<span style="color:#66d9ef">if</span>(pixel<span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>)
+   pixel1();
+  <span style="color:#66d9ef">if</span> (pixel<span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>)
+   pixel2();
+  <span style="color:#66d9ef">else</span>
+   pixel3();
+}
+
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">pixel1</span>()
+{
+ setcolor(WHITE);
+
+ ellipse(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">70</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">360</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">10</span>);<span style="color:#75715e">//face//elliptical//#swag
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">60</span>,x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>);<span style="color:#75715e">//body
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">55</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">35</span>);<span style="color:#75715e">//right arm
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">35</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">20</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">55</span>);<span style="color:#75715e">//right hand
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">55</span>,x<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">30</span>);<span style="color:#75715e">//left arm
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">30</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>);<span style="color:#75715e">//left hand
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>);<span style="color:#75715e">//seat
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,x,y);<span style="color:#75715e">//chassis
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">15</span>);<span style="color:#75715e">//leg arm
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">15</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,y);<span style="color:#75715e">//leg fingers
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,y,x<span style="color:#f92672">+</span><span style="color:#ae81ff">15</span>,y);<span style="color:#75715e">//leg foot
+</span><span style="color:#75715e"></span> circle(x,y,<span style="color:#ae81ff">14</span>);<span style="color:#75715e">//unicycleo
+</span><span style="color:#75715e"></span> delay(<span style="color:#ae81ff">2</span>);
+
+ setcolor(BLACK);
+ ellipse(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">70</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">360</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">10</span>);<span style="color:#75715e">//face//elliptical//#swag
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">60</span>,x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>);<span style="color:#75715e">//body
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">55</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">35</span>);<span style="color:#75715e">//right arm
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">35</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">20</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">55</span>);<span style="color:#75715e">//right hand
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">55</span>,x<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">30</span>);<span style="color:#75715e">//left arm
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">30</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>);<span style="color:#75715e">//left hand
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>);<span style="color:#75715e">//seat
+</span><span style="color:#75715e"></span>
+ line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,x,y);<span style="color:#75715e">//chassis
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>);<span style="color:#75715e">//leg arm
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>,x<span style="color:#f92672">-</span><span style="color:#ae81ff">8</span>,y);<span style="color:#75715e">//leg fingers
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">-</span><span style="color:#ae81ff">8</span>,y,x<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>,y);<span style="color:#75715e">//leg foot
+</span><span style="color:#75715e"></span> circle(x,y,<span style="color:#ae81ff">14</span>);<span style="color:#75715e">//unicycleo
+</span><span style="color:#75715e"></span>
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">pixel2</span>()
+{
+
+ setcolor(WHITE);
+ ellipse(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">70</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">360</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">10</span>);<span style="color:#75715e">//face//elliptical//#swag
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">60</span>,x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>);<span style="color:#75715e">//body
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">55</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">35</span>);<span style="color:#75715e">//right arm
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">35</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">20</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">55</span>);<span style="color:#75715e">//right hand
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">55</span>,x<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">30</span>);<span style="color:#75715e">//left arm
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">30</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>);<span style="color:#75715e">//left hand
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>);<span style="color:#75715e">//seat
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,x,y);<span style="color:#75715e">//chassis
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">7</span>,y);<span style="color:#75715e">//leg arm
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">+</span><span style="color:#ae81ff">7</span>,y,x,y<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>);<span style="color:#75715e">//leg fingers
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>);<span style="color:#75715e">//leg foot
+</span><span style="color:#75715e"></span> circle(x,y,<span style="color:#ae81ff">14</span>);<span style="color:#75715e">//unicycleo
+</span><span style="color:#75715e"></span>
+ delay(<span style="color:#ae81ff">1</span>);
+ setcolor(BLACK);
+ ellipse(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">70</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">360</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">10</span>);<span style="color:#75715e">//face//elliptical//#swag
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">60</span>,x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>);<span style="color:#75715e">//body
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">55</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">35</span>);<span style="color:#75715e">//right arm
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">35</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">20</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">55</span>);<span style="color:#75715e">//right hand
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">55</span>,x<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">30</span>);<span style="color:#75715e">//left arm
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">30</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>);<span style="color:#75715e">//left hand
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>);<span style="color:#75715e">//seat
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,x,y);<span style="color:#75715e">//chassis
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">7</span>,y);<span style="color:#75715e">//leg arm
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">+</span><span style="color:#ae81ff">7</span>,y,x,y<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>);<span style="color:#75715e">//leg fingers
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>);<span style="color:#75715e">//leg foot
+</span><span style="color:#75715e"></span> circle(x,y,<span style="color:#ae81ff">14</span>);<span style="color:#75715e">//unicycleo
+</span><span style="color:#75715e"></span>
+
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">pixel3</span>()
+{
+
+ setcolor(WHITE);
+  ellipse(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">70</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">360</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">10</span>);<span style="color:#75715e">//face//elliptical//#swag
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">60</span>,x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>);<span style="color:#75715e">//body
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">55</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">35</span>);<span style="color:#75715e">//right arm
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">35</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">20</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">55</span>);<span style="color:#75715e">//right hand
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">55</span>,x<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">30</span>);<span style="color:#75715e">//left arm
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">30</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>);<span style="color:#75715e">//left hand
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>);<span style="color:#75715e">//seat
+</span><span style="color:#75715e"></span>
+ line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,x,y);<span style="color:#75715e">//chassis
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>);<span style="color:#75715e">//leg arm
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>,x<span style="color:#f92672">-</span><span style="color:#ae81ff">8</span>,y);<span style="color:#75715e">//leg fingers
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">-</span><span style="color:#ae81ff">8</span>,y,x<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>,y);<span style="color:#75715e">//leg foot
+</span><span style="color:#75715e"></span> circle(x,y,<span style="color:#ae81ff">14</span>);<span style="color:#75715e">//unicycleo
+</span><span style="color:#75715e"></span> delay(<span style="color:#ae81ff">1</span>);
+ setcolor(BLACK);
+
+  ellipse(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">70</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">360</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">10</span>);<span style="color:#75715e">//face//elliptical//#swag
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">60</span>,x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>);<span style="color:#75715e">//body
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">55</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">35</span>);<span style="color:#75715e">//right arm
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">35</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">20</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">55</span>);<span style="color:#75715e">//right hand
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">55</span>,x<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">30</span>);<span style="color:#75715e">//left arm
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">30</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>);<span style="color:#75715e">//left hand
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>);<span style="color:#75715e">//seat
+</span><span style="color:#75715e"></span>
+ line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,x,y);<span style="color:#75715e">//chassis
+</span><span style="color:#75715e"></span> line(x,y<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>);<span style="color:#75715e">//leg arm
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>,x<span style="color:#f92672">-</span><span style="color:#ae81ff">8</span>,y);<span style="color:#75715e">//leg fingers
+</span><span style="color:#75715e"></span> line(x<span style="color:#f92672">-</span><span style="color:#ae81ff">8</span>,y,x<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>,y);<span style="color:#75715e">//leg foot
+</span><span style="color:#75715e"></span> circle(x,y,<span style="color:#ae81ff">14</span>);<span style="color:#75715e">//unicycleo
+</span><span style="color:#75715e"></span>
+}
+
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">drawbullet</span>()
+{
+  circle(b.x,getmaxy()<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">20</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">drawred</span>()
+{
+  circle(b.x,getmaxy()<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">10</span>);
+}
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">gameover</span>()
+{
+<span style="color:#66d9ef">if</span>((x<span style="color:#f92672">+</span><span style="color:#ae81ff">30</span><span style="color:#f92672">==</span>b.x)<span style="color:#f92672">&amp;&amp;</span>((y<span style="color:#f92672">+</span><span style="color:#ae81ff">20</span>)<span style="color:#f92672">==</span>getmaxy()<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">||</span>(x<span style="color:#f92672">+</span><span style="color:#ae81ff">30</span><span style="color:#f92672">==</span>b.x)<span style="color:#f92672">&amp;&amp;</span>((y<span style="color:#f92672">+</span><span style="color:#ae81ff">30</span>)<span style="color:#f92672">==</span>getmaxy()<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)   )
+ {
+ <span style="color:#66d9ef">int</span> l;
+ <span style="color:#66d9ef">int</span> theta <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+ <span style="color:#66d9ef">for</span>(l <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;l<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>;)
+  {
+   setcolor( (theta<span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>) <span style="color:#f92672">%</span><span style="color:#ae81ff">15</span> <span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+   outtextxy(<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">100</span>,<span style="color:#e6db74">&#34;GaMe OvEr &#34;</span>);
+    <span style="color:#66d9ef">if</span> (kbhit())
+     {
+      getch();
+      closegraph();
+      exit(<span style="color:#ae81ff">0</span>);
+     }
+   theta<span style="color:#f92672">++</span>;
+   delay(<span style="color:#ae81ff">100</span>);
+  }
+}
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">drawbullet1</span>()
+{
+  circle(b.z,getmaxy()<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">20</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">drawred1</span>()
+{
+  circle(b.z,getmaxy()<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">10</span>);
+}
+</code></pre></div><style>
+.image-center{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+</style>	
+            </div>
+            <hr>
+            <span style="float: right;">-IceCereal</span>
+            <br><br>
+            <footer class="footer text-center">
+	<div class="row">
+		<div class="col-xs-12 user-social text-center">
+		
+
+
+
+
+<a href="https://twitter.com/NS_Raghav" title="Twitter" target="_blank"><i class="fab fa-twitter fa-2x" aria-hidden="true"></i></a>
+
+
+
+
+
+<a href="https://github.com/IceCereal" title="GitHub" target="_blank"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://gitlab.com/IceCereal" title="GitLab" target="_blank"><i class="fab fa-gitlab fa-2x" aria-hidden="true"></i></a>
+
+
+
+<a href="https://linkedin.com/in/nsraghav" title="LinkedIn" target="_blank"><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://open.spotify.com/user/t4pfbok0xhcuwo4wza98boxlq?si=U0b2eXiLR56zX5NLsOyZRg" title="Spotify" target="_blank"><i class="fab fa-spotify fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://instagram.com/icecereal30" title="Instagram" target="_blank"><i class="fab fa-instagram fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://t.me/IceCereal" title="Telegram" target="_blank"><i class="fab fa-telegram fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://discordapp.com/users/378555841017544724" title="Discord" target="_blank"><i class="fab fa-discord fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://reddit.com/user/IceCereal" title="Reddit" target="_blank"><i class="fab fa-reddit fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="mailto:raghav170555@mechyd.ac.in" title="Email" target="_blank"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>
+
+
+
+
+
+
+<a href="https://www.last.fm/user/IceCereal" title="last.fm" target="_blank"><i class="fab fa-lastfm fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://drive.google.com/open?id=1HN2eJhQxX9aLqHOIWteF2MEHC9hhVPOQ" title="Curriculum Vitae" target="_blank"><i class="far fa-file fa-2x" aria-hidden="true"></i></a>
+
+
+
+		</div>
+	</div>
+<p style="text-align: center;">IceCereal.github.io - Made by IceCereal |
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>:
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme
+</span>
+</p>
+</footer>
+
+        
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+
+        
+    </body>

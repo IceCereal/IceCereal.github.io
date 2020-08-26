@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Brick Breaker &middot; IceCereal </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.68.3" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="css/nix.css">
+<link rel="stylesheet" href="../css/nix.css">
+<link rel="stylesheet" href="../../css/nix.css">
+<link rel="stylesheet" href="../../../css/nix.css">
+
+<link rel="stylesheet" href="http://icecereal.github.io/css/nix.css">
+
+
+
+
+<link rel="shortcut icon" href="Kurisu-Icon.png">
+<link rel="shortcut icon" href="../Kurisu-Icon.png">
+<link rel="shortcut icon" href="../../Kurisu-Icon.png">
+<link rel="shortcut icon" href="../../../Kurisu-Icon.png">
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top font-header" style="height:2.27em;">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=http://icecereal.github.io/ style="font-size: 1.5em;background-color:rgba(0,0,0,0.75);">raghav@IceCereal ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right" style="margin-top:0.2em;">
+				<li>
+					<a href="http://icecereal.github.io/" style="color:black;background-color:#d4d4d4;height:2em;">/home/raghav</a>
+				</li>
+				
+				
+				<li class="dropdown">
+                    
+            		<a href="/about_me/" style="color:black;background-color:#d4d4d4;height:2em;">~/about_me</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+            		<a href="/achievements/" style="color:black;background-color:#d4d4d4;height:2em;">~/achievements</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+            		<a href="/blog/" style="color:black;background-color:#d4d4d4;height:2em;">~/blog</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+            		<a href="/projects/" style="color:black;background-color:#d4d4d4;height:2em;">~/projects</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+            		<a href="https://drive.google.com/open?id=1HN2eJhQxX9aLqHOIWteF2MEHC9hhVPOQ" style="color:black;background-color:#d4d4d4;height:2em;">~/resume</a>
+            		
+        		</li>
+        		
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+<style>
+@media (max-width: 1250px) {
+	.navbar-header {
+		float: none;
+	}
+	.navbar-left,.navbar-right {
+		float: none !important;
+	}
+	.navbar-toggle {
+		display: block;
+	}
+	.navbar-collapse {
+		border-top: 1px solid transparent;
+		box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+	}
+	.navbar-fixed-top {
+			top: 0;
+			border-width: 0 0 1px;
+		}
+	.navbar-collapse.collapse {
+		display: none!important;
+	}
+	.navbar-nav {
+		float: none!important;
+			margin-top: 7.5px;
+		}
+		.navbar-nav>li {
+		float: none;
+	}
+	.navbar-nav>li>a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.collapse.in{
+		display:block !important;
+	}
+}
+</style>
+        <div class="container wrapper">
+            <h1>Brick Breaker</h1>
+            <span class="post-date">Oct 15, 2016 </span>
+            <div class="post-content">
+                <p>Your fault if your eyes bleed after seeing this crap. Before the actual code itself, here are a few screenshots.</p>
+<img src="/img/subcodes/brickbreaker1.png" width="35%" height="35%" class="image-center">
+<p style="text-align: center"> Exhibit A </p><br><br>
+<img src="/img/subcodes/brickbreaker2.png" width="35%" height="35%" class="image-center">
+<p style="text-align: center"> Exhibit B </p><br><br>
+<img src="/img/subcodes/brickbreaker3.png" width="35%" height="35%" class="image-center">
+<p style="text-align: center"> The Main Menu </p><br><br>
+<img src="/img/subcodes/brickbreaker4.png" width="35%" height="35%" class="image-center">
+<p style="text-align: center"> The Game Over Screen </p><br><br>
+<img src="/img/subcodes/brickbreaker5.png" width="35%" height="35%" class="image-center">
+<p style="text-align: center"> "Would You Like To Enter Your Name" in a disgusting font? No, I really would not. </p><br><br>
+<p>THE POINT OF NO RETURN:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;all.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> gx, gy;<span style="color:#75715e">//GETMAXX(), GETMAXY()
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> px, py;<span style="color:#75715e">//PAD_X, PAD_Y
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">float</span> bx, by;<span style="color:#75715e">//BALL_X,BALL_Y
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">float</span> vbx<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,vby<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;<span style="color:#75715e">//Velocity_ball_x, Velocity_ball_y
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> score <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+<span style="color:#66d9ef">int</span> rel_ball <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+<span style="color:#66d9ef">float</span> liner <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<span style="color:#66d9ef">int</span> sound_chk <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<span style="color:#66d9ef">int</span> s <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">key</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changevelball</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">drawballline</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">choosevel</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">draw_pad</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">drawbricks</span>(<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ball</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ball_chk</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">chkbrick</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">esc_key</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">score_disp</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">name_enter</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">get_name</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">put_in_file</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sound_func</span>(<span style="color:#66d9ef">int</span>);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main_menu</span>();
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">bricks</span>
+{
+ <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+ <span style="color:#66d9ef">int</span> x[<span style="color:#ae81ff">20</span>], y[<span style="color:#ae81ff">20</span>], <span style="color:#66d9ef">bool</span>[<span style="color:#ae81ff">20</span>];
+ bricks()
+ {
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">20</span>;i<span style="color:#f92672">++</span>)
+   <span style="color:#66d9ef">bool</span>[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+ }
+ <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">bricks_chk</span>();
+ <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">assign_brick</span>();
+}b;
+
+<span style="color:#66d9ef">void</span> bricks<span style="color:#f92672">::</span>bricks_chk()
+{
+ <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+ <span style="color:#66d9ef">for</span>(i;i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">20</span>;i<span style="color:#f92672">++</span>)
+ {
+  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">bool</span>[i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)
+  {
+   setcolor(RED);
+   drawbricks(x[i],y[i]);
+  }
+  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">bool</span>[i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+  {
+   setcolor(BLACK);
+   drawbricks(x[i],y[i]);
+  }
+ }
+}
+
+<span style="color:#66d9ef">void</span> bricks<span style="color:#f92672">::</span>assign_brick()
+{
+ <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span>;i<span style="color:#f92672">++</span>)
+  {
+   x[i] <span style="color:#f92672">=</span> gx<span style="color:#f92672">/</span><span style="color:#ae81ff">14</span> <span style="color:#f92672">+</span> (<span style="color:#ae81ff">40</span><span style="color:#f92672">*</span>i);
+   y[i] <span style="color:#f92672">=</span> gy<span style="color:#f92672">/</span><span style="color:#ae81ff">7</span>;
+  }
+ <span style="color:#66d9ef">for</span> (i;i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">20</span>;i<span style="color:#f92672">++</span>)
+ {
+  x[i] <span style="color:#f92672">=</span> (i<span style="color:#f92672">-</span><span style="color:#ae81ff">8</span>)<span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">14</span>  <span style="color:#f92672">+</span> <span style="color:#ae81ff">10</span>;
+  y[i] <span style="color:#f92672">=</span> gy<span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>;
+ }
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">data_for_storage</span>
+{
+ <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+ <span style="color:#66d9ef">char</span> name[<span style="color:#ae81ff">30</span>];
+ <span style="color:#66d9ef">int</span> t_score;
+}dot;
+
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>()
+{
+ clrscr();
+ <span style="color:#66d9ef">int</span> gdriver <span style="color:#f92672">=</span> DETECT,gmode;
+ initgraph(<span style="color:#f92672">&amp;</span>gdriver,<span style="color:#f92672">&amp;</span>gmode,<span style="color:#e6db74">&#34;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">TC</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">BGI&#34;</span>);
+ gx <span style="color:#f92672">=</span> getmaxx();
+ gy <span style="color:#f92672">=</span> getmaxy();
+ px <span style="color:#f92672">=</span> gx<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>;
+ bx <span style="color:#f92672">=</span> gx<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> ;
+ by <span style="color:#f92672">=</span> gy <span style="color:#f92672">-</span> <span style="color:#ae81ff">34</span>;
+ b.assign_brick();
+ <span style="color:#66d9ef">void</span> game();
+ game();
+ closegraph();
+}
+<span style="color:#75715e">//int sound_control_val = 0;
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">control_sound</span>()
+{
+ <span style="color:#f92672">++</span>sound_chk;
+ <span style="color:#66d9ef">if</span> (sound_chk <span style="color:#f92672">==</span> <span style="color:#ae81ff">8</span>)
+  {s<span style="color:#f92672">++</span>;
+   sound_chk <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  }
+ <span style="color:#66d9ef">if</span> (s <span style="color:#f92672">==</span> <span style="color:#ae81ff">64</span>)
+  s <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+ sound_func(s);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">game</span>()
+{
+ setcolor(WHITE);
+ rectangle(<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">20</span>,gx<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>,gy<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>);
+ settextstyle(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">5</span>);
+ setcolor(BROWN);
+ outtextxy(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">50</span>,<span style="color:#ae81ff">5</span>,<span style="color:#e6db74">&#34;BRICK BREAKER&#34;</span>);
+ <span style="color:#66d9ef">int</span> i;
+ <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>;)
+ {
+ setcolor(WHITE);
+ rectangle(<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">20</span>,gx<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>,gy<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>);
+ settextstyle(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">5</span>);
+ setcolor(BROWN);
+ outtextxy(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">50</span>,<span style="color:#ae81ff">5</span>,<span style="color:#e6db74">&#34;BRICK BREAKER&#34;</span>);
+ control_sound();
+ setcolor(RED);
+ b.bricks_chk();
+ setcolor(BLACK);
+ ball();
+ setcolor(WHITE);
+ draw_pad();
+ setfillstyle(<span style="color:#ae81ff">1</span>,BLACK);
+ floodfill(px,py<span style="color:#f92672">+</span>gy<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,WHITE);
+ setcolor(BLACK);
+ score_disp();
+ draw_pad();
+ <span style="color:#66d9ef">if</span>(kbhit())
+  key();
+ ball_chk();
+ setcolor(WHITE);
+ ball();
+ score_disp();
+ setcolor(LIGHTCYAN);
+ setfillstyle(<span style="color:#ae81ff">5</span>,LIGHTCYAN);
+ draw_pad();
+ floodfill(px,py<span style="color:#f92672">+</span>gy<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,LIGHTCYAN);
+ delay(<span style="color:#ae81ff">25</span>);
+ <span style="color:#75715e">//gameover();
+</span><span style="color:#75715e"></span>}
+closegraph();
+}
+
+
+
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">draw_pad</span>()
+{
+ line(px<span style="color:#f92672">-</span><span style="color:#ae81ff">25</span>,py<span style="color:#f92672">+</span>gy<span style="color:#f92672">-</span><span style="color:#ae81ff">25</span>,px<span style="color:#f92672">+</span><span style="color:#ae81ff">25</span>,py<span style="color:#f92672">+</span>gy<span style="color:#f92672">-</span><span style="color:#ae81ff">25</span>);<span style="color:#75715e">//top line
+</span><span style="color:#75715e"></span> line(px<span style="color:#f92672">-</span><span style="color:#ae81ff">25</span>,py<span style="color:#f92672">+</span>gy<span style="color:#f92672">-</span><span style="color:#ae81ff">15</span>,px<span style="color:#f92672">+</span><span style="color:#ae81ff">25</span>,py<span style="color:#f92672">+</span>gy<span style="color:#f92672">-</span><span style="color:#ae81ff">15</span>);<span style="color:#75715e">//bottom line
+</span><span style="color:#75715e"></span> arc(px<span style="color:#f92672">-</span><span style="color:#ae81ff">25</span>,py<span style="color:#f92672">+</span>gy<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">90</span>,<span style="color:#ae81ff">270</span>,<span style="color:#ae81ff">5</span>);<span style="color:#75715e">//left arc
+</span><span style="color:#75715e"></span> arc(px<span style="color:#f92672">+</span><span style="color:#ae81ff">25</span>,py<span style="color:#f92672">+</span>gy<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">270</span>,<span style="color:#ae81ff">90</span>,<span style="color:#ae81ff">5</span>);<span style="color:#75715e">//right arc
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">key</span>()
+{
+ <span style="color:#66d9ef">char</span> ch;
+ ch <span style="color:#f92672">=</span> getche();
+ <span style="color:#66d9ef">switch</span> (ch)
+ {
+  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;a&#39;</span><span style="color:#f92672">:</span>
+  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;A&#39;</span><span style="color:#f92672">:</span>
+   px <span style="color:#f92672">-=</span> <span style="color:#ae81ff">10</span>;
+   <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;d&#39;</span><span style="color:#f92672">:</span>
+  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;D&#39;</span><span style="color:#f92672">:</span>
+   px <span style="color:#f92672">+=</span> <span style="color:#ae81ff">10</span>;
+   <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;w&#39;</span><span style="color:#f92672">:</span>
+  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;W&#39;</span><span style="color:#f92672">:</span>
+   <span style="color:#66d9ef">if</span> (rel_ball <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+   {
+    rel_ball <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    changevelball();
+   }
+    <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">27</span><span style="color:#f92672">:</span>
+   esc_key();
+ }
+ <span style="color:#66d9ef">if</span> (px <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">41</span>)
+  px <span style="color:#f92672">=</span> <span style="color:#ae81ff">41</span>;
+ <span style="color:#66d9ef">if</span> (px <span style="color:#f92672">&gt;=</span> gx<span style="color:#f92672">-</span><span style="color:#ae81ff">41</span>)
+  px <span style="color:#f92672">=</span> gx <span style="color:#f92672">-</span> <span style="color:#ae81ff">41</span>;
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">drawbricks</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y)
+{
+ rectangle(x<span style="color:#f92672">-</span><span style="color:#ae81ff">15</span>,y<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,x<span style="color:#f92672">+</span><span style="color:#ae81ff">15</span>,y<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ball</span>()
+{
+ circle(bx, by, <span style="color:#ae81ff">5</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ball_chk</span>()
+{
+ bx <span style="color:#f92672">=</span> bx <span style="color:#f92672">+</span> vbx;
+ by <span style="color:#f92672">=</span> by <span style="color:#f92672">+</span> vby;
+ <span style="color:#66d9ef">if</span> ( ((bx<span style="color:#f92672">+</span><span style="color:#ae81ff">8</span>)<span style="color:#f92672">&gt;=</span>(gx<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>))<span style="color:#f92672">||</span>((bx<span style="color:#f92672">-</span><span style="color:#ae81ff">8</span>)<span style="color:#f92672">&lt;=</span>(<span style="color:#ae81ff">10</span>)) )
+ {
+  vbx <span style="color:#f92672">=</span> (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>(vbx);
+ }
+ <span style="color:#66d9ef">if</span> ((by<span style="color:#f92672">-</span><span style="color:#ae81ff">8</span>)<span style="color:#f92672">&lt;=</span>(<span style="color:#ae81ff">20</span>))
+ {
+  vby <span style="color:#f92672">=</span> (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>vby;
+ }
+ <span style="color:#66d9ef">if</span> ( (((bx<span style="color:#f92672">+</span><span style="color:#ae81ff">4</span>) <span style="color:#f92672">&gt;=</span> (px<span style="color:#f92672">-</span><span style="color:#ae81ff">25</span>)) <span style="color:#f92672">&amp;&amp;</span> ((bx<span style="color:#f92672">-</span><span style="color:#ae81ff">4</span>)<span style="color:#f92672">&lt;=</span> (px<span style="color:#f92672">+</span><span style="color:#ae81ff">25</span>))) <span style="color:#f92672">&amp;&amp;</span> ((py<span style="color:#f92672">+</span>gy<span style="color:#f92672">-</span><span style="color:#ae81ff">33</span> <span style="color:#f92672">&lt;=</span> by)<span style="color:#f92672">&amp;&amp;</span>(py<span style="color:#f92672">+</span>gy<span style="color:#f92672">-</span><span style="color:#ae81ff">29</span><span style="color:#f92672">&gt;=</span>by)) )
+ {vby <span style="color:#f92672">=</span> (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>vby;
+ }
+ chkbrick();
+ <span style="color:#66d9ef">if</span> ((by<span style="color:#f92672">+</span><span style="color:#ae81ff">8</span>)<span style="color:#f92672">&gt;=</span>(gy<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>))
+ {setcolor(RED);
+ outtextxy(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#f92672">-</span><span style="color:#ae81ff">50</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,<span style="color:#e6db74">&#34;GAME OVER&#34;</span>);
+ getch();
+ setfillstyle(<span style="color:#ae81ff">1</span>,BLACK);
+ floodfill(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,WHITE);
+ name_enter();
+ settextstyle(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">5</span>);
+ esc_key();
+ }
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">chkbrick</span>()
+{
+ <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">20</span>;i<span style="color:#f92672">++</span>)
+ {
+  <span style="color:#66d9ef">if</span> (b.<span style="color:#66d9ef">bool</span>[i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)
+  {
+   <span style="color:#66d9ef">if</span>  ( (((bx<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>) <span style="color:#f92672">&gt;=</span> (b.x[i]<span style="color:#f92672">-</span><span style="color:#ae81ff">15</span>))<span style="color:#f92672">&amp;&amp;</span>((bx<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>) <span style="color:#f92672">&lt;=</span> (b.x[i]<span style="color:#f92672">+</span><span style="color:#ae81ff">15</span>))) <span style="color:#f92672">&amp;&amp;</span> ( ( ((by<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>) <span style="color:#f92672">&lt;=</span> b.y[i]<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">&amp;&amp;</span>((by<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>)<span style="color:#f92672">&gt;=</span>b.y[i]<span style="color:#f92672">-</span><span style="color:#ae81ff">8</span>)) <span style="color:#f92672">||</span> ( ((by<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>)<span style="color:#f92672">&gt;=</span>b.y[i]<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">&amp;&amp;</span>((by<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>)<span style="color:#f92672">&lt;=</span>b.y[i]<span style="color:#f92672">+</span><span style="color:#ae81ff">8</span>) )   ) )
+   {
+    b.<span style="color:#66d9ef">bool</span>[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    vby <span style="color:#f92672">=</span> (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>vby;
+    score<span style="color:#f92672">++</span>;
+   }
+   <span style="color:#66d9ef">if</span> ( ((bx<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>)<span style="color:#f92672">&gt;=</span> (b.x[i]<span style="color:#f92672">+</span><span style="color:#ae81ff">12</span>))<span style="color:#f92672">&amp;&amp;</span>((bx<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>)<span style="color:#f92672">&lt;=</span>(b.x[i]<span style="color:#f92672">+</span><span style="color:#ae81ff">18</span>)) <span style="color:#f92672">&amp;&amp;</span> ((by<span style="color:#f92672">&lt;=</span>b.y[i]<span style="color:#f92672">+</span><span style="color:#ae81ff">8</span>)<span style="color:#f92672">&amp;&amp;</span>(by<span style="color:#f92672">&gt;=</span>b.y[i]<span style="color:#f92672">-</span><span style="color:#ae81ff">8</span>)) )
+   {
+    b.<span style="color:#66d9ef">bool</span>[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    vbx <span style="color:#f92672">=</span> (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>vbx;
+    score<span style="color:#f92672">++</span>;
+   }
+   <span style="color:#66d9ef">if</span> ( ((bx<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>)<span style="color:#f92672">&gt;=</span> (b.x[i]<span style="color:#f92672">+</span><span style="color:#ae81ff">12</span>))<span style="color:#f92672">&amp;&amp;</span>((bx<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>)<span style="color:#f92672">&lt;=</span>(b.x[i]<span style="color:#f92672">+</span><span style="color:#ae81ff">18</span>)) <span style="color:#f92672">&amp;&amp;</span> ((by<span style="color:#f92672">&lt;=</span>b.y[i]<span style="color:#f92672">+</span><span style="color:#ae81ff">8</span>)<span style="color:#f92672">&amp;&amp;</span>(by<span style="color:#f92672">&gt;=</span>b.y[i]<span style="color:#f92672">-</span><span style="color:#ae81ff">8</span>)) )
+   {
+    b.<span style="color:#66d9ef">bool</span>[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    vbx <span style="color:#f92672">=</span> (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>vbx;
+    score<span style="color:#f92672">++</span>;
+   }
+  }
+ }
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">esc_key</span>()
+{
+  setcolor(GREEN);
+  rectangle(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>);
+  setfillstyle(<span style="color:#ae81ff">1</span>,BLACK);
+  floodfill(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,GREEN);
+  setcolor(WHITE);
+  rectangle(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>);
+  setcolor(GREEN);
+  rectangle(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">50</span>);
+  outtextxy(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">50</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">20</span>,<span style="color:#e6db74">&#34;   START OVER  - ENTER S&#34;</span>);
+  rectangle(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">70</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">110</span>);
+  outtextxy(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">50</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">80</span>,<span style="color:#e6db74">&#34;    CONTINUE - ENTER C&#34;</span>);
+  rectangle(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">130</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">170</span>);
+  outtextxy(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">50</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">140</span>,<span style="color:#e6db74">&#34;   MAIN MENU - ENTER M&#34;</span>);
+  rectangle(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">180</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">220</span>);
+  outtextxy(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">50</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">190</span>,<span style="color:#e6db74">&#34;  QUIT - PRESS ESC KEY&#34;</span>);
+  setcolor(WHITE);
+  score_disp();
+  <span style="color:#66d9ef">int</span> color <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> l <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> ;l<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>;)
+  {
+  setcolor(GREEN);
+  rectangle(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>);
+  setfillstyle(<span style="color:#ae81ff">1</span>,BLACK);
+  floodfill(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,GREEN);
+  setcolor(WHITE);
+  rectangle(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>);
+  setcolor(GREEN);
+  rectangle(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">50</span>);
+  outtextxy(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">50</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">20</span>,<span style="color:#e6db74">&#34;   START OVER  - ENTER S&#34;</span>);
+  rectangle(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">70</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">110</span>);
+  outtextxy(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">50</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">80</span>,<span style="color:#e6db74">&#34;    CONTINUE - ENTER C&#34;</span>);
+  rectangle(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">130</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">170</span>);
+  outtextxy(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">50</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">140</span>,<span style="color:#e6db74">&#34;   MAIN MENU - ENTER M&#34;</span>);
+  rectangle(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">180</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">220</span>);
+  outtextxy(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">50</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">190</span>,<span style="color:#e6db74">&#34;  QUIT - PRESS ESC KEY&#34;</span>);
+  setcolor(WHITE);
+  score_disp();
+  control_sound();
+  setcolor( (color<span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>) <span style="color:#f92672">%</span><span style="color:#ae81ff">15</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
+  outtextxy((gx<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">60</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">225</span>,<span style="color:#e6db74">&#34;R / o / S </span><span style="color:#ae81ff">\\</span><span style="color:#e6db74"> o </span><span style="color:#ae81ff">\\</span><span style="color:#e6db74"> N&#34;</span>);
+  <span style="color:#66d9ef">if</span> (kbhit())
+  {
+  <span style="color:#66d9ef">char</span> ch;
+  ch <span style="color:#f92672">=</span> getche();
+  <span style="color:#66d9ef">switch</span> (ch)
+  {
+   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;C&#39;</span><span style="color:#f92672">:</span>
+   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;c&#39;</span><span style="color:#f92672">:</span>
+    floodfill(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,RED);
+    setcolor(BLACK);
+    rectangle(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>);
+    rel_ball <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    game();
+    <span style="color:#66d9ef">break</span>;
+   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;s&#39;</span><span style="color:#f92672">:</span>
+   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;S&#39;</span><span style="color:#f92672">:</span>
+    floodfill(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,RED);
+    setcolor(BLACK);
+    rectangle(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>);
+    rel_ball <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> qt <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;qt<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">20</span>;qt<span style="color:#f92672">++</span>)
+    {
+     b.<span style="color:#66d9ef">bool</span>[qt] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    }
+    vbx <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;vby<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+    score <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    main();
+    <span style="color:#66d9ef">break</span>;
+   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;m&#39;</span><span style="color:#f92672">:</span>
+   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;M&#39;</span><span style="color:#f92672">:</span>
+    main_menu();
+    <span style="color:#66d9ef">break</span>;
+   <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">27</span><span style="color:#f92672">:</span>
+    nosound();
+    closegraph();
+    exit(<span style="color:#ae81ff">0</span>);
+  }
+ }
+ <span style="color:#f92672">++</span>color;
+ delay(<span style="color:#ae81ff">200</span>);
+}
+}
+
+<span style="color:#66d9ef">int</span> theta <span style="color:#f92672">=</span> <span style="color:#ae81ff">90</span>;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changevelball</span>()
+{
+<span style="color:#66d9ef">char</span> ch;
+ <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>;)
+ {
+  control_sound();
+  setcolor(BLACK);
+  drawballline();
+  ball();
+  setcolor(WHITE);
+  draw_pad();
+  setfillstyle(<span style="color:#ae81ff">1</span>,BLACK);
+  floodfill(px,py<span style="color:#f92672">+</span>gy<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,WHITE);
+  setcolor(BLACK);
+  draw_pad();
+  <span style="color:#66d9ef">if</span> (kbhit())
+  {
+   ch <span style="color:#f92672">=</span> getche();
+   <span style="color:#66d9ef">switch</span>(ch)
+   {
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;a&#39;</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;A&#39;</span><span style="color:#f92672">:</span>
+     theta <span style="color:#f92672">+=</span> <span style="color:#ae81ff">2</span>;
+     <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;d&#39;</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;D&#39;</span><span style="color:#f92672">:</span>
+     theta <span style="color:#f92672">-=</span> <span style="color:#ae81ff">2</span>;
+     <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;w&#39;</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;W&#39;</span><span style="color:#f92672">:</span>
+     choosevel();
+     <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">27</span><span style="color:#f92672">:</span>
+     esc_key();
+   }
+  }
+   setcolor(WHITE);
+   drawballline();
+   ball();
+   setcolor(LIGHTCYAN);
+   setfillstyle(<span style="color:#ae81ff">5</span>,LIGHTCYAN);
+   draw_pad();
+   floodfill(px,gy<span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>,LIGHTCYAN);
+   delay(<span style="color:#ae81ff">25</span>);
+ }
+ closegraph();
+}
+
+<span style="color:#66d9ef">int</span> lenline;
+<span style="color:#66d9ef">float</span> radtodeg <span style="color:#f92672">=</span> (<span style="color:#ae81ff">3.141592</span><span style="color:#f92672">/</span><span style="color:#ae81ff">180</span>);
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">drawballline</span>()
+{
+ lenline <span style="color:#f92672">=</span> (gy<span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>);
+ <span style="color:#66d9ef">if</span> (theta<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">150</span>)
+  theta <span style="color:#f92672">=</span> <span style="color:#ae81ff">150</span>;
+ <span style="color:#66d9ef">if</span> (theta<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">30</span>)
+  theta <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>;
+ <span style="color:#66d9ef">int</span> x,y;
+ y <span style="color:#f92672">=</span> (gy<span style="color:#f92672">-</span><span style="color:#ae81ff">34</span>) <span style="color:#f92672">-</span> lenline<span style="color:#f92672">*</span>(sin(theta<span style="color:#f92672">*</span>radtodeg));
+ x <span style="color:#f92672">=</span> gx<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> lenline<span style="color:#f92672">*</span>(cos(theta<span style="color:#f92672">*</span>radtodeg));
+ line(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,gy<span style="color:#f92672">-</span><span style="color:#ae81ff">34</span>,x,y);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">choosevel</span>()
+{
+ vbx <span style="color:#f92672">=</span> lenline<span style="color:#f92672">*</span>(cos(theta<span style="color:#f92672">*</span>radtodeg))<span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>;
+ vby <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>lenline<span style="color:#f92672">*</span>(sin(theta<span style="color:#f92672">*</span>radtodeg))<span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>;
+ game();
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">score_disp</span>()
+{
+ <span style="color:#66d9ef">int</span> keep_score <span style="color:#f92672">=</span> score;
+ <span style="color:#66d9ef">char</span> ch[<span style="color:#ae81ff">4</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">48</span>,<span style="color:#ae81ff">48</span>,<span style="color:#ae81ff">48</span>};
+ <span style="color:#66d9ef">int</span> divide <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>, assign <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, temp <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+ <span style="color:#66d9ef">for</span> (divide,assign;divide<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">1</span>;divide<span style="color:#f92672">/=</span><span style="color:#ae81ff">10</span>,<span style="color:#f92672">++</span>assign)
+ {
+  temp <span style="color:#f92672">=</span> keep_score<span style="color:#f92672">/</span>divide;
+  ch[assign] <span style="color:#f92672">=</span> temp <span style="color:#f92672">+</span><span style="color:#ae81ff">48</span>;
+  keep_score <span style="color:#f92672">-=</span> (temp<span style="color:#f92672">*</span>divide);
+ }
+ outtextxy(<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">5</span>, <span style="color:#e6db74">&#34;SCORE:&#34;</span>);
+ <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">4</span>;<span style="color:#f92672">++</span>i)
+ {
+ <span style="color:#66d9ef">switch</span>(ch[i])
+ {
+  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">48</span><span style="color:#f92672">:</span>
+  outtextxy(<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">5</span><span style="color:#f92672">+</span><span style="color:#ae81ff">50</span><span style="color:#f92672">+</span>(i<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>),<span style="color:#ae81ff">5</span>,<span style="color:#e6db74">&#34;0&#34;</span>);
+  <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">49</span><span style="color:#f92672">:</span>
+  outtextxy(<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">5</span><span style="color:#f92672">+</span><span style="color:#ae81ff">50</span><span style="color:#f92672">+</span>(i<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>),<span style="color:#ae81ff">5</span>,<span style="color:#e6db74">&#34;1&#34;</span>);
+  <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">50</span><span style="color:#f92672">:</span>
+  outtextxy(<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">5</span><span style="color:#f92672">+</span><span style="color:#ae81ff">50</span><span style="color:#f92672">+</span>(i<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>),<span style="color:#ae81ff">5</span>,<span style="color:#e6db74">&#34;2&#34;</span>);
+  <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">51</span><span style="color:#f92672">:</span>
+  outtextxy(<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">5</span><span style="color:#f92672">+</span><span style="color:#ae81ff">50</span><span style="color:#f92672">+</span>(i<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>),<span style="color:#ae81ff">5</span>,<span style="color:#e6db74">&#34;3&#34;</span>);
+  <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">52</span><span style="color:#f92672">:</span>
+  outtextxy(<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">5</span><span style="color:#f92672">+</span><span style="color:#ae81ff">50</span><span style="color:#f92672">+</span>(i<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>),<span style="color:#ae81ff">5</span>,<span style="color:#e6db74">&#34;4&#34;</span>);
+  <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">53</span><span style="color:#f92672">:</span>
+  outtextxy(<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">5</span><span style="color:#f92672">+</span><span style="color:#ae81ff">50</span><span style="color:#f92672">+</span>(i<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>),<span style="color:#ae81ff">5</span>,<span style="color:#e6db74">&#34;5&#34;</span>);
+  <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">54</span><span style="color:#f92672">:</span>
+  outtextxy(<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">5</span><span style="color:#f92672">+</span><span style="color:#ae81ff">50</span><span style="color:#f92672">+</span>(i<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>),<span style="color:#ae81ff">5</span>,<span style="color:#e6db74">&#34;6&#34;</span>);
+  <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">55</span><span style="color:#f92672">:</span>
+  outtextxy(<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">5</span><span style="color:#f92672">+</span><span style="color:#ae81ff">50</span><span style="color:#f92672">+</span>(i<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>),<span style="color:#ae81ff">5</span>,<span style="color:#e6db74">&#34;7&#34;</span>);
+  <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">56</span><span style="color:#f92672">:</span>
+  outtextxy(<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">5</span><span style="color:#f92672">+</span><span style="color:#ae81ff">50</span><span style="color:#f92672">+</span>(i<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>),<span style="color:#ae81ff">5</span>,<span style="color:#e6db74">&#34;8&#34;</span>);
+  <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">57</span><span style="color:#f92672">:</span>
+  outtextxy(<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">5</span><span style="color:#f92672">+</span><span style="color:#ae81ff">50</span><span style="color:#f92672">+</span>(i<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>),<span style="color:#ae81ff">5</span>,<span style="color:#e6db74">&#34;9&#34;</span>);
+  <span style="color:#66d9ef">break</span>;
+  }
+ }
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">name_enter</span>()
+{
+ settextstyle(<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>);
+ setcolor(<span style="color:#ae81ff">10</span>);
+ outtextxy(<span style="color:#ae81ff">20</span><span style="color:#f92672">*</span>getmaxx()<span style="color:#f92672">/</span><span style="color:#ae81ff">100</span>,getmaxy()<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>,<span style="color:#e6db74">&#34;Would You Like To Enter Your Name? (Y/N)&#34;</span>);
+ gotoxy(<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">10</span>);
+ <span style="color:#66d9ef">char</span> ch;
+ cin<span style="color:#f92672">&gt;&gt;</span>ch;
+ <span style="color:#66d9ef">switch</span>(ch)
+ {
+  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;y&#39;</span><span style="color:#f92672">:</span>
+  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;Y&#39;</span><span style="color:#f92672">:</span>
+   get_name();
+   <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;n&#39;</span><span style="color:#f92672">:</span>
+  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;N&#39;</span><span style="color:#f92672">:</span>
+   <span style="color:#66d9ef">break</span>;
+ }
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">get_name</span>()
+{
+ setcolor(BLACK);
+ outtextxy(<span style="color:#ae81ff">20</span><span style="color:#f92672">*</span>getmaxx()<span style="color:#f92672">/</span><span style="color:#ae81ff">100</span>,getmaxy()<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>,<span style="color:#e6db74">&#34;Would You Like To Enter Your Name? (Y/N)&#34;</span>);
+ gotoxy(<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">10</span>);
+ cout<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;               &#34;</span>;
+ setcolor(<span style="color:#ae81ff">10</span>);
+ outtextxy(getmaxx()<span style="color:#f92672">/</span><span style="color:#ae81ff">100</span>,getmaxy()<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>,<span style="color:#e6db74">&#34;Please Enter Your Name:&#34;</span>);
+ gets(dot.name);
+ put_in_file();
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">put_in_file</span>()
+{
+ dot.t_score <span style="color:#f92672">=</span> score;
+ ofstream fobj(<span style="color:#e6db74">&#34;BRICKS.TXT&#34;</span>,ios<span style="color:#f92672">::</span>out<span style="color:#f92672">|</span>ios<span style="color:#f92672">::</span>app);
+ fobj.write( (<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>) <span style="color:#f92672">&amp;</span>dot, <span style="color:#66d9ef">sizeof</span>(dot) );
+ fobj.close();
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">c</span>(<span style="color:#66d9ef">int</span> s)
+{
+ sound(s);
+}
+
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sound_func</span>(<span style="color:#66d9ef">int</span> s)
+{
+ <span style="color:#66d9ef">switch</span> (s)
+ {
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">392</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">466</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">587</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">7</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">784</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">9</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">392</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">11</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">466</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">13</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">622</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">15</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">784</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">17</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">466</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">19</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">587</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">21</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">698</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">23</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">932</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">25</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">349</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">27</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">440</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">29</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">523</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">31</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">698</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">33</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">261</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">35</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">311</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">37</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">392</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">39</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">523</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">41</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">311</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">43</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">392</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">45</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">466</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">47</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">622</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">49</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">233</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">51</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">293</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">53</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">349</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">55</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">466</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">57</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">349</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">59</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">440</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">61</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">523</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">63</span><span style="color:#f92672">:</span>
+  c(<span style="color:#ae81ff">698</span>);
+  <span style="color:#66d9ef">break</span>;
+ <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+  nosound();
+ }
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main_menu</span>()
+{
+ setcolor(BLACK);
+ rectangle(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gx<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>gy<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>);
+ setcolor(WHITE);
+ rectangle(<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">20</span>,gx<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>,gy<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>);
+ settextstyle(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">5</span>);
+ setcolor(BROWN);
+ outtextxy(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">50</span>,<span style="color:#ae81ff">5</span>,<span style="color:#e6db74">&#34;BRICK BREAKER&#34;</span>);
+ setfillstyle(<span style="color:#ae81ff">1</span>,BLACK);
+ floodfill(gx<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,gy<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,WHITE);
+ setcolor(WHITE);
+ ifstream fobj(<span style="color:#e6db74">&#34;BRICKS.TXT&#34;</span>,ios<span style="color:#f92672">::</span>in);
+ fobj.seekg(<span style="color:#ae81ff">0</span>);
+ <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+ gotoxy(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">5</span>);
+ cout<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;NAME:&#34;</span>;
+ gotoxy(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">5</span>);
+ cout<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;SCORE:&#34;</span>;
+ <span style="color:#66d9ef">while</span>(fobj)
+ {
+ fobj.read( (<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>) <span style="color:#f92672">&amp;</span>dot, <span style="color:#66d9ef">sizeof</span>(dot) );
+ gotoxy(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">6</span><span style="color:#f92672">+</span>i);
+ puts(dot.name);
+ gotoxy(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">6</span><span style="color:#f92672">+</span>i);
+ cout<span style="color:#f92672">&lt;&lt;</span>dot.t_score;
+ }
+ getch();
+}
+</code></pre></div><style>
+.image-center{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+</style>	
+            </div>
+            <hr>
+            <span style="float: right;">-IceCereal</span>
+            <br><br>
+            <footer class="footer text-center">
+	<div class="row">
+		<div class="col-xs-12 user-social text-center">
+		
+
+
+
+
+<a href="https://twitter.com/NS_Raghav" title="Twitter" target="_blank"><i class="fab fa-twitter fa-2x" aria-hidden="true"></i></a>
+
+
+
+
+
+<a href="https://github.com/IceCereal" title="GitHub" target="_blank"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://gitlab.com/IceCereal" title="GitLab" target="_blank"><i class="fab fa-gitlab fa-2x" aria-hidden="true"></i></a>
+
+
+
+<a href="https://linkedin.com/in/nsraghav" title="LinkedIn" target="_blank"><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://open.spotify.com/user/t4pfbok0xhcuwo4wza98boxlq?si=U0b2eXiLR56zX5NLsOyZRg" title="Spotify" target="_blank"><i class="fab fa-spotify fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://instagram.com/icecereal30" title="Instagram" target="_blank"><i class="fab fa-instagram fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://t.me/IceCereal" title="Telegram" target="_blank"><i class="fab fa-telegram fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://discordapp.com/users/378555841017544724" title="Discord" target="_blank"><i class="fab fa-discord fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://reddit.com/user/IceCereal" title="Reddit" target="_blank"><i class="fab fa-reddit fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="mailto:raghav170555@mechyd.ac.in" title="Email" target="_blank"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>
+
+
+
+
+
+
+<a href="https://www.last.fm/user/IceCereal" title="last.fm" target="_blank"><i class="fab fa-lastfm fa-2x" aria-hidden="true"></i></a>
+
+
+<a href="https://drive.google.com/open?id=1HN2eJhQxX9aLqHOIWteF2MEHC9hhVPOQ" title="Curriculum Vitae" target="_blank"><i class="far fa-file fa-2x" aria-hidden="true"></i></a>
+
+
+
+		</div>
+	</div>
+<p style="text-align: center;">IceCereal.github.io - Made by IceCereal |
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>:
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme
+</span>
+</p>
+</footer>
+
+        
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+
+        
+    </body>
